@@ -2,7 +2,9 @@
    slider.js — Before/After comparison (ES module)
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => initSliders());
+
+export function initSliders() {
   document.querySelectorAll('.ba-slider').forEach(slider => {
     const handle   = slider.querySelector('.ba-handle');
     const afterImg = slider.querySelector('.ba-after');
@@ -33,4 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const rect = slider.getBoundingClientRect();
     update(rect.width / 2);
   });
-});
+}

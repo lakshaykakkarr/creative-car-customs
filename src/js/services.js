@@ -2,7 +2,9 @@
    services.js — Category tab switching (ES module)
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => initTabs());
+
+export function initTabs() {
 
   const tabsNav     = document.getElementById('serviceTabs');
   const tabBtns     = document.querySelectorAll('.tab-btn');
@@ -65,4 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   activateFromHash();
   window.addEventListener('hashchange', activateFromHash);
-});
+}

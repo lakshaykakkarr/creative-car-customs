@@ -1,0 +1,397 @@
+Here is the comprehensive audit of the entire Creative Car Customs website:
+
+---
+
+## 1. Content Inventory — By Page/Section
+
+### Global / Repeated Components
+
+**Navigation** (identical across all 6 pages):
+- Logo: `CCC` (SVG circle, stroke `#e11d48`) + "Creative**Car**Customs"
+- Links: Home, About, Services, Gallery, Service Areas, **Get a Quote** (CTA)
+- Utilities: Dark/Light theme toggle, hamburger
+
+**Footer** (identical across all 6 pages):
+- Brand blurb: *"Premium car detailing, protection, customization & accessories. Doorstep service across India since 2018."*
+- Quick Links: About Us, Services, Gallery, Service Areas, Contact
+- Top Services: Ceramic Coating, PPF, Car Wrapping, Detailing, ECU Remapping
+- Contact: `+91 98765 43210` | `hello@creativecarcustoms.in` | Sector 18, Gurgaon, Haryana 122015
+- Copyright: `© 2026 Creative Car Customs. All rights reserved.` | "Designed for car enthusiasts"
+
+**WhatsApp Float** (all pages):
+- `href`: `https://wa.me/919999999999?text=Hi%20CCC!%20I'd%20like%20to%20know%20more%20about%20your%20services.`
+- Label: "Chat with us"
+
+> ⚠️ **Inconsistency**: Footer links `wa.me/919876543210`, float button links `wa.me/919999999999` — two different numbers.
+
+---
+
+### index.html — Home
+
+**Meta:**
+- Title: "Creative Car Customs — Premium Car Detailing & Customization | Delhi NCR & Pan-India"
+- Description: "Creative Car Customs (CCC) offers end-to-end car detailing, ceramic coating, PPF, wrapping, performance upgrades & accessories. Doorstep service across India. HQ Delhi NCR."
+- OG Title: "Creative Car Customs — Where Every Detail Hits Different"
+
+**Hero Section:**
+- Badge: "Delhi NCR • Pan-India Doorstep Service"
+- H1: "Where Every Detail **Hits Different**"
+- Subtitle: "Premium car detailing, protection, customization & performance upgrades — delivered to your doorstep, anywhere in India."
+- CTA Buttons: "Book Now" → contact.html | "Explore Services" → services.html
+- Hero image: `https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80`
+
+**Services Preview Section:**
+- Label: "What We Do"
+- H2: "End-to-End Car Care"
+- Desc: "From a simple wash to full custom builds — we handle everything your car needs under one roof."
+
+| Card | Link | Count Label | Description |
+|---|---|---|---|
+| Detailing & Cleaning | `#detailing` | 7 Services | Exterior wash, interior deep clean, engine bay, headlight restoration, leather care & more |
+| Paint & Protection | `#protection` | 7 Services | Paint correction, ceramic coating, PPF, underbody coating, windshield coating & scratch removal |
+| Wrapping & Aesthetics | `#wrapping` | 6 Services | Full body wraps, partial wraps, custom paint, window tinting, custom lighting & more |
+| Performance Upgrades | `#performance` | 6 Services | Body kits, custom exhaust, ECU remapping, suspension upgrades, brake upgrades & sunroof service |
+| Tech & Accessories | `#tech` | 8 Services | Infotainment, 360° cameras, dashcams, GPS trackers, seat covers, interior trim & fragrance systems |
+| Maintenance & Value | `#maintenance` | 3 Services | Annual maintenance packages, pre-purchase car inspection & insurance claim assistance |
+
+**Before/After Slider:**
+- Label: "Transformations"
+- H2: "See the Difference"
+- Desc: "Drag the slider to reveal stunning before & after transformations by our expert team."
+- Before image: `https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=900&q=80` / alt: "Car before detailing"
+- After image: `https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80` / alt: "Car after detailing"
+
+**Stats Section:**
+| Stat | Value (`data-target`) | Label |
+|---|---|---|
+| Cars Detailed | 15,000 | Cars Detailed |
+| Cities Served | 50 | Cities Served |
+| Years Experience | 8 | Years Experience |
+| Happy Customers | 12,000 | Happy Customers |
+
+**Testimonials Section:**
+- Label: "Testimonials" | H2: "What Our Clients Say"
+- Desc: "Join thousands of satisfied car owners who trust CCC with their prized possessions."
+
+| Name | Initials | Car | Location | Quote excerpt |
+|---|---|---|---|---|
+| Rahul Kapoor | RK | BMW 530d | Delhi | Ceramic coating on BMW 5 Series, doorstep service |
+| Priya Sharma | PS | Toyota Fortuner | Jaipur | Full body PPF + matte wrap |
+| Arjun Mehta | AM | VW Polo GT TSI | Gurgaon | ECU remap + custom exhaust |
+| Neha Krishnan | NK | Mahindra XUV700 | Noida | Interior deep clean + AC sanitization |
+| Vikram Singh | VS | Mercedes C300 | Delhi | AMC package |
+
+---
+
+### about.html — About Us
+
+**Meta:**
+- Title: "About Us — Creative Car Customs | Our Story & Mission"
+
+**Page Hero:** "About **Creative Car Customs**" / "Born from passion. Built on precision. Trusted by thousands."
+
+**Brand Story:**
+- Label: "Our Story"
+- H2: "From a Garage Dream to **India's Premium** Car Care Brand"
+- Founded: 2018, small Gurgaon garage
+- Founder described as "a lifelong car enthusiast"
+- Story image: `https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80` / alt: "CCC team at work"
+- Floating badge: **8+** Years
+- Key claim: "50+ cities" with doorstep service
+
+**Mission & Vision Cards:**
+- Mission: "To deliver world-class car care experiences that are accessible, convenient, and uncompromising in quality — right at your doorstep, anywhere in India."
+- Vision: "To become India's #1 end-to-end car customization and care platform — setting the standard for quality, innovation, and customer experience in the automotive aftermarket."
+
+**Why Choose Us (6 cards):**
+| Title | Key detail |
+|---|---|
+| Certified Products | Gtechniq, XPEL, 3M, Gyeon |
+| Trained Technicians | 3+ years hands-on experience |
+| Doorstep Service | Fully-equipped mobile unit |
+| Pan-India Coverage | Delhi to Chennai, Mumbai to Kolkata, 50+ cities |
+| Warranty Backed | Ceramic up to 5 years, PPF up to 10 years |
+| 37 Services | One-stop shop |
+
+**Team Section:**
+| Name | Initials | Role | Bio |
+|---|---|---|---|
+| Amit Verma | AV | Founder & CEO | Car nut since age 10. 12+ years in automotive aftermarket |
+| Sneha Reddy | SR | Head of Operations | Logistics wizard, manages pan-India doorstep network |
+| Rajesh Joshi | RJ | Lead Detailer & Trainer | Gtechniq & XPEL certified. Has detailed 5000+ cars |
+
+**CTA Banner:** "Ready to Experience the CCC Difference?" / "Book a consultation and let us show you what true car care looks like." / "Get a Free Quote" → contact.html
+
+---
+
+### services.html — Services
+
+**Meta:**
+- Title: "Services — Creative Car Customs | 51 End-to-End Car Services" *(note: body says "51", description says "37" — inconsistency)*
+
+**Page Hero:** "Our **Services**" / "51 end-to-end car services — from a basic wash to full custom builds. Everything your car needs, under one roof."
+
+**Tab Navigation:** Detailing & Cleaning | Paint & Protection | Wrapping & Aesthetics | Performance | Tech & Accessories | Maintenance
+
+**Tab: Detailing & Cleaning** (9 services)
+| Service | Price |
+|---|---|
+| Exterior Wash & Detailing | ₹1,499 |
+| Interior Deep Cleaning | ₹2,499 |
+| Engine Bay Cleaning | ₹1,999 |
+| Headlight Restoration | ₹1,299 |
+| Alloy Wheel Repair & Detailing | ₹2,999 |
+| AC Vent Sanitization & Odor Removal | ₹999 |
+| Leather Conditioning & Repair | ₹1,799 |
+| Paint Decontamination & Iron Fallout Removal | ₹1,999 |
+| Ozone & Steam Sanitization | ₹1,499 |
+
+**Tab: Paint & Protection** (9 services)
+| Service | Price |
+|---|---|
+| Paint Correction (Single-Stage) | ₹4,999 |
+| Paint Correction (Multi-Stage) | ₹8,999 |
+| Ceramic Coating (9H / Graphene) | ₹15,999 |
+| Paint Protection Film (PPF) | ₹25,000 |
+| Windshield Hydrophobic Coating | ₹2,499 |
+| Underbody Coating / Anti-Rust | ₹3,499 |
+| Scratch Removal & Touch-Up Paint | ₹999 |
+| Ceramic Alloy Wheel Coating | ₹4,999 |
+| Chrome Delete / Vinyl Overlay | ₹6,999 |
+
+**Tab: Wrapping & Aesthetics** (8 services)
+| Service | Price |
+|---|---|
+| Full Body Car Wrapping | ₹45,000 |
+| Partial Wraps (Roof, Hood, Mirrors) | ₹8,000 |
+| Custom Paint Jobs & Airbrushing | ₹35,000 |
+| Window Tinting / Solar Films | ₹4,999 |
+| Custom Lighting (DRLs, Underglow, Ambient) | ₹3,999 |
+| Number Plate Frames & Accessories | ₹799 |
+| Racing Stripes & Custom Decals | ₹3,999 |
+| Door Sills & Kick Plate Wrapping | ₹2,499 |
+
+**Tab: Performance** (8 services)
+| Service | Price |
+|---|---|
+| Body Kits & Aero Mods | ₹15,000 |
+| Custom Exhaust Systems | ₹12,000 |
+| Performance Tuning / ECU Remapping | ₹18,000 |
+| Suspension Upgrades | ₹20,000 |
+| Ceramic Brake Pad Upgrades | ₹5,999 |
+| Sunroof Service & Maintenance | ₹2,999 |
+| Cold Air Intake Upgrade | ₹8,000 |
+| Intercooler Upgrade | ₹22,000 |
+
+**Tab: Tech & Accessories** (11 services)
+| Service | Price |
+|---|---|
+| Infotainment & Audio Upgrades | ₹8,999 |
+| 360° Camera & Parking Sensors | ₹12,999 |
+| Dashcam Installation | ₹4,999 |
+| Car GPS / Tracker Installation | ₹3,999 |
+| Electric / Automatic Tailgate | ₹18,000 |
+| Seat Covers & Upholstery | ₹6,999 |
+| Dashboard Trim & Interior Accessories | ₹4,999 |
+| Car Perfume / Fragrance Systems | ₹1,499 |
+| Wireless Charging Pad Installation | ₹3,499 |
+| Remote Engine Start System | ₹7,999 |
+| Head-Up Display (HUD) Installation | ₹12,999 |
+
+**Tab: Maintenance** (6 services)
+| Service | Price |
+|---|---|
+| Annual Maintenance Packages (AMC) | ₹24,999/year |
+| Pre-Purchase Car Inspection | ₹3,499 |
+| Insurance Claim Assistance | Free Consultation |
+| Tyre Rotation, Balancing & Alignment | ₹999 |
+| Battery Health Check & EV Servicing | ₹1,999 |
+| CCC Monthly Detailing Subscription | ₹2,499/month |
+
+**Packages Section:**
+| Package | Price | Includes |
+|---|---|---|
+| Essential | ₹4,999/session | Exterior wash, interior deep clean, dashboard/trim polish, tire/alloy cleaning, AC vent sanitization |
+| Premium *(featured)* | ₹18,999/session | Everything Essential + single-stage paint correction, 9H ceramic coating, windshield hydrophobic coat, engine bay cleaning, leather conditioning |
+| Ultimate | ₹49,999/session | Everything Premium + multi-stage paint correction, graphene ceramic coating, underbody anti-rust, headlight restoration, alloy wheel ceramic coat, 1-year AMC |
+
+**Process (5 steps):**
+1. Book Online — Fill the form or call us
+2. We Confirm — Slot & pricing confirmed
+3. We Arrive — Team at your doorstep
+4. Service — Expert work, zero shortcuts
+5. Handover — Inspect & approve
+
+**FAQ (5 Q&As):**
+1. How long does ceramic coating last? → 9H: 3–5 years; graphene: up to 7 years
+2. Do you really come to my city? → Yes, 50+ cities; travel charges outside Delhi NCR
+3. What products do you use? → Gtechniq, XPEL, 3M, Avery Dennison, Gyeon, Rupes
+4. How much does full detail + ceramic coating cost? → Sedan from ₹18,999; SUV from ₹24,999
+5. Is PPF worth it? → XPEL Ultimate Plus, 10-year warranty, self-healing
+
+---
+
+### gallery.html — Gallery
+
+**Meta:** "Gallery — Creative Car Customs | Before & After Transformations"
+
+**Page Hero:** "Our **Gallery**" / "Real work. Real results. Browse our portfolio of stunning car transformations."
+
+**Filter Buttons:** All | Detailing | Ceramic Coating | PPF | Wrapping | Performance | Interior
+
+**Gallery Grid (12 items):**
+| Category | Image URL | Alt / Overlay Text |
+|---|---|---|
+| ceramic | `photo-1503376780353-7e6692767b70` | BMW 7 Series — Graphene Ceramic Coating |
+| detailing | `photo-1552519507-da3b142c6e3d` | Corvette C7 — Full Exterior Detailing |
+| wrap | `photo-1544636331-e26879cd4d9b` | Porsche 911 — Satin Black Full Wrap |
+| ppf | `photo-1618843479313-40f8afb4b4d8` | Mercedes AMG GT — Full Body PPF |
+| interior | `photo-1503736334956-4c8f8e92946d` | Audi A6 — Interior Deep Clean & Leather Care |
+| performance | `photo-1494976388531-d1058494cdd8` | Ford Mustang — Body Kit + Custom Exhaust |
+| ceramic | `photo-1542362567-b07e54358753` | Audi RS5 — 9H Ceramic Coating |
+| wrap | `photo-1583121274602-3e2820c69888` | Range Rover — Matte Grey Full Wrap + Chrome Delete |
+| detailing | `photo-1619405399517-d7fce0f13302` | BMW M4 — Multi-Stage Paint Correction |
+| ppf | `photo-1580273916550-e323be2ae537` | Tesla Model 3 — Full Front PPF |
+| interior | `photo-1605559424843-9e4c228bf1c2` | Creta — Custom Nappa Leather Seat Covers |
+| performance | `photo-1568605117036-5fe5e7bab0b7` | VW Polo GT — ECU Stage 2 + Custom Exhaust |
+
+**Before/After Sliders (2):**
+1. BMW 7 Series — Full Detail + Graphene Ceramic Coating
+2. Porsche 911 — Satin Black Full Body Wrap
+
+**CTA Banner:** "Want Your Car Featured Here?" / "Book Your Transformation" → contact.html
+
+---
+
+### areas.html — Service Areas
+
+**Meta:** "Service Areas — Creative Car Customs | Pan-India Doorstep Service"
+
+**Page Hero:** "We Serve **All of India**" / "50+ cities. One promise — premium car care delivered to your doorstep."
+
+**HQ Info:**
+- Address: Plot 42, Sector 18, Udyog Vihar, Gurgaon, Haryana 122015
+- Phone: `+91 98765 43210`
+- Hours: Mon–Sat: 9:00 AM – 7:00 PM | Sun: By Appointment
+- Google Maps embed (placeholder `pb=!1m18!...28.49...77.07`)
+
+**City Grid:**
+| Region | Cities |
+|---|---|
+| North India | Delhi NCR (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Lucknow, Dehradun |
+| West India | Mumbai, Pune, Ahmedabad, Surat, Goa, Nagpur, Indore |
+| South India | Bangalore, Hyderabad, Chennai, Kochi, Coimbatore, Visakhapatnam |
+| East India | Kolkata, Patna, Bhubaneswar, Ranchi, Guwahati |
+
+**"How Doorstep Works" (3 steps):**
+1. Book & Consult
+2. We Come to You
+3. Inspect & Enjoy
+
+**CTA Banner:** "Your City, Your Driveway, Our Service" / "Book Doorstep Service"
+
+---
+
+### contact.html — Contact
+
+**Meta:** "Contact — Creative Car Customs | Get a Free Quote"
+
+**Page Hero:** "Get in **Touch**" / "Free consultation. No obligations. Let's discuss what your car needs."
+
+**Form Fields:**
+| Field | Type | Required | Placeholder |
+|---|---|---|---|
+| Full Name | text | ✅ | John Doe |
+| Phone Number | tel | ✅ | +91 98765 43210 |
+| Email Address | email | ❌ | john@example.com |
+| Your City | text | ✅ | e.g., Gurgaon |
+| Car Make & Model | text | ❌ | e.g., BMW 530d |
+| Service Interested In | select | ✅ | (grouped options — all services) |
+| Preferred Date | date | ❌ | — |
+| Approximate Budget | select | ❌ | Under ₹5,000 / ₹5k–15k / ₹15k–30k / ₹30k–50k / ₹50k+ / Not sure |
+| Message | textarea | ❌ | "Tell us about your car…" |
+
+**Contact Info Panel:**
+- Phone: `+91 98765 43210`
+- WhatsApp: `wa.me/919876543210`
+- Email: `hello@creativecarcustoms.in`
+- Address: Plot 42, Sector 18, Udyog Vihar, Gurgaon, Haryana 122015
+- Hours: Mon–Fri: 9:00 AM – 7:00 PM | Sat: 9:00 AM – 6:00 PM | Sun: By Appointment Only
+
+**Success message:** "Inquiry Sent! We'll get back to you within 2 hours. Check your phone for a confirmation WhatsApp."
+
+---
+
+## 2. Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Bundler/Dev server | Vite 5.4.0 |
+| Animation | GSAP 3.12.5 (+ ScrollTrigger plugin) |
+| Fonts | Google Fonts — Inter (400–900) |
+| Build output | `dist/` (Rollup, 6 HTML entry points) |
+| Dev port | 5173 |
+| No framework | Vanilla HTML/CSS/JS (ES modules) |
+| No backend | Form submits only to `console.log()` with a comment "replace with Formspree / Netlify / custom fetch" |
+| Images | All Unsplash CDN URLs (no local images except `assets/logo.svg`) |
+
+**JS file roles:**
+- `main.js` — navbar, theme toggle, GSAP animations, counter animation
+- `services.js` — tab switching with sliding indicator, hash-based deep links
+- `gallery.js` — filter buttons, lightbox
+- `slider.js` — before/after drag comparison
+- `form.js` — client-side validation, success state
+
+---
+
+## 3. Existing Data Structures → Sanity Schema Candidates
+
+| Schema Name | Fields | Source |
+|---|---|---|
+| **siteSettings** | brandName, tagline, phone, whatsappNumber, email, address, foundedYear, footerTagline | footer, contact page |
+| **service** | title, slug, category (enum: detailing/protection/wrapping/performance/tech/maintenance), description, startingPrice, currency, icon (SVG key or name), isPopular | services.html |
+| **serviceCategory** | title, slug, tabLabel, description, heroDescription | tab sections |
+| **servicePackage** | name, price, priceUnit (session/year/month), description, features (array of strings), isFeatured | packages section |
+| **testimonial** | reviewerName, initials, carMake, carModel, city, rating, quote | index.html testimonials |
+| **galleryItem** | image (asset), alt, overlayText, category (enum: detailing/ceramic/ppf/wrap/performance/interior) | gallery.html |
+| **beforeAfterSlider** | beforeImage, afterImage, beforeAlt, afterAlt, caption | index.html + gallery.html |
+| **teamMember** | name, initials, role, bio | about.html |
+| **stat** | value (number), label, suffix (e.g., "+") | index.html stats |
+| **faqItem** | question, answer | services.html FAQ |
+| **serviceArea** | cityName, region (enum: north/south/east/west), isHQ | areas.html |
+| **homePage** | heroTitle, heroSubtitle, heroBadge, heroImage, metaTitle, metaDescription | index.html |
+| **page** (generic) | slug, metaTitle, metaDescription, heroHeading, heroSubtitle | all pages |
+| **businessHours** | day (or dayRange), openTime, closeTime, isByAppointment | contact.html, areas.html |
+
+---
+
+## 4. Repeated Patterns Across Pages
+
+| Pattern | Pages |
+|---|---|
+| Identical `<nav>` (navbar) | All 6 |
+| Identical `<footer>` | All 6 |
+| Identical WhatsApp float button | All 6 |
+| `<div class="glass-ambient">` blobs | All 6 |
+| `<div class="mobile-overlay">` | All 6 |
+| `<section class="page-hero">` with H1 + subtitle | about, services, gallery, areas, contact |
+| `.card` component (icon + title + text) | index, about, services, areas |
+| `.cta-banner` section | about, gallery, areas |
+| Before/After slider (`.ba-slider`) | index, gallery |
+| `<script type="module" src="src/js/main.js">` | All 6 |
+| Stats counter grid (`.stats-grid`) | index only |
+| Services grid (`.services-grid`) | services only |
+| All "Book Now" buttons → `contact.html` | services |
+| Packages grid (3-tier pricing) | services only |
+| Gallery filter + lightbox | gallery only |
+
+---
+
+## Notable Content Issues Found
+
+1. **Phone number inconsistency**: Footer/contact uses `919876543210`; WhatsApp float uses `919999999999`
+2. **Service count inconsistency**: Home page says "37 Services" (about.html), page title says "51", page hero says "51" — actual count in tabs is ~51, but the About page card says "37 Services"
+3. **Form has no backend** — `form.js` just `console.log()`s on submit; comment says "replace with Formspree / Netlify"
+4. **Google Maps embed** is a placeholder coordinate `(28.49, 77.07)` not a real business embed
+5. **Social media links** are all `href="#"` placeholders (Instagram, YouTube, Facebook, WhatsApp)
+6. **Services duplicated in HTML**: The services tab content appears repeated in `services.html` (the file contains the tab content twice — once in the main rendering and the content appears duplicated at line ~600+)

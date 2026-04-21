@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/assets/logo-D3MxaZLu.svg">
-  <script type="module" crossorigin src="/assets/main-DZdwD8jE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-yqdYsuMq.css">
+  <script type="module" crossorigin src="/assets/main-B3kV9SXb.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-BZvP4Dmy.css">
 </head>
 <body class="grain">
 
@@ -41,13 +41,15 @@
         <li><a href="areas.html" class="active">Service Areas</a></li>
         <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -102,7 +104,7 @@
         </div>
         <div class="gsap-reveal">
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5!2d77.07!3d28.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI5JzI0LjAiTiA3N8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CCC Gurgaon Studio Location"></iframe>
+            <iframe id="areasMapEmbed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5!2d77.07!3d28.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI5JzI0LjAiTiA3N8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CCC Gurgaon Studio Location"></iframe>
           </div>
         </div>
       </div>
@@ -119,7 +121,7 @@
       </div>
 
       <!-- City Grid -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem;" class="gsap-reveal">
+      <div id="areasGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem;" class="gsap-reveal">
         <!-- North -->
         <div class="card" style="padding:1.5rem;">
           <h3 style="font-size:0.9rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">North India</h3>
@@ -265,7 +267,7 @@
       </div>
       <div>
         <h4 class="footer-heading">Contact</h4>
-        <ul class="footer-links">
+        <ul class="footer-links footer-contact-list">
           <li><a href="tel:+919876543210">+91 98765 43210</a></li>
           <li><a href="mailto:hello@creativecarcustoms.in">hello@creativecarcustoms.in</a></li>
           <li>Sector 18, Gurgaon,<br>Haryana 122015</li>
@@ -273,7 +275,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Creative Car Customs. All rights reserved.</span>
+      <span>&copy; <span class="footer-year">2026</span> Creative Car Customs. All rights reserved.</span>
       <span>Designed for car enthusiasts</span>
     </div>
   </footer>

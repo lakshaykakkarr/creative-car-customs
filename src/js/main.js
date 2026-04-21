@@ -4,10 +4,28 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { applySettings } from './cms/settings.js';
+import { renderHome } from './cms/home.js';
+import { renderServices } from './cms/servicesLoader.js';
+import { renderGallery } from './cms/galleryLoader.js';
+import { renderAbout } from './cms/aboutLoader.js';
+import { renderAreas } from './cms/areasLoader.js';
+import { renderContact } from './cms/contactLoader.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ---- CMS: apply global settings on every page ----
+  applySettings();
+
+  // ---- CMS: page-specific content ----
+  if (document.getElementById('serviceCategoriesGrid')) renderHome();
+  else if (document.getElementById('serviceTabContents')) renderServices();
+  else if (document.getElementById('galleryFilters'))     renderGallery();
+  else if (document.getElementById('teamGrid'))           renderAbout();
+  else if (document.getElementById('areasGrid'))          renderAreas();
+  else if (document.getElementById('businessHoursContact')) renderContact();
 
   // ---- Theme Toggle ----
   const htmlEl = document.documentElement;
@@ -54,6 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
 
   // ---- FAQ Accordion ----
+  initFaq();
+
+  // ---- GSAP Animations ----
+  initAnimations();
+
+  // ---- Animated Counters ----
+  initCounters();
+});
+
+export function initFaq() {
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-question');
     const a = item.querySelector('.faq-answer');
@@ -70,13 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // ---- GSAP Animations ----
-  initAnimations();
-
-  // ---- Animated Counters ----
-  initCounters();
-});
+}
 
 function initAnimations() {
   // --- Hero entrance (DOMContentLoaded, not scroll) ---
@@ -166,7 +188,7 @@ function initAnimations() {
   });
 }
 
-function initCounters() {
+export function initCounters() {
   const counters = document.querySelectorAll('.stat-number[data-target]');
   if (counters.length === 0 || typeof IntersectionObserver === 'undefined') return;
 

@@ -2,7 +2,9 @@
    gallery.js — Filter + Lightbox (ES module)
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => initGallery());
+
+export function initGallery() {
 
   // ---- Gallery Filter ----
   const filterBtns   = document.querySelectorAll('.filter-btn');
@@ -50,4 +52,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
   });
-});
+}

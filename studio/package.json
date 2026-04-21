@@ -1,0 +1,25 @@
+{
+  "name": "creative-car-customs-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "manage": "sanity manage",
+    "seed": "tsx seed/seed.ts"
+  },
+  "dependencies": {
+    "@sanity/vision": "^4.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^4.22.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@sanity/client": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
