@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e11d48"/>
+      <stop offset="100%" style="stop-color:#f43f5e"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#accent-grad)" stroke-width="4"/>
+  <!-- Inner hexagon shape -->
+  <polygon points="100,30 155,65 155,135 100,170 45,135 45,65" fill="none" stroke="#f5f5f5" stroke-width="2.5" opacity="0.9"/>
+  <!-- C letter - stylized -->
+  <text x="100" y="88" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900" fill="#f5f5f5" letter-spacing="-2">CCC</text>
+  <!-- Tagline -->
+  <text x="100" y="118" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#e11d48" letter-spacing="4" text-transform="uppercase">CREATIVE CAR</text>
+  <text x="100" y="136" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#e11d48" letter-spacing="4" text-transform="uppercase">CUSTOMS</text>
+  <!-- Speed lines -->
+  <line x1="25" y1="100" x2="10" y2="100" stroke="url(#accent-grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="85" x2="15" y2="85" stroke="url(#accent-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="25" y1="115" x2="15" y2="115" stroke="url(#accent-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+</svg>

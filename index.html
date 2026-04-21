@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 </head>
@@ -97,7 +97,7 @@
         <p class="section-desc">From a simple wash to full custom builds — we handle everything your car needs under one roof.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+      <div class="auto-grid">
 
         <!-- Detailing -->
         <a href="services.html#detailing" class="card gsap-reveal" style="text-decoration:none;">
@@ -364,11 +364,8 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/slider.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+  <script type="module" src="src/js/slider.js"></script>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/919999999999?text=Hi%20CCC!%20I'd%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">

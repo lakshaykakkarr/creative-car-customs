@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Creative Car Customs | Get a Free Quote</title>
+  <meta name="description" content="Get in touch with Creative Car Customs for a free consultation. Book car detailing, ceramic coating, PPF, wrapping & more. Call, WhatsApp, or fill the form.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-D3MxaZLu.svg">
+  <script type="module" crossorigin src="/assets/contact-sW8C35PQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DZdwD8jE.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-yqdYsuMq.css">
+</head>
+<body class="grain">
+
+  <!-- Glass Ambient Background -->
+  <div class="glass-ambient">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#e11d48" stroke-width="2"/>
+          <text x="20" y="25" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="900" fill="#f5f5f5">CCC</text>
+        </svg>
+        <span>Creative<span class="logo-accent">Car</span>Customs</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="areas.html">Service Areas</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get a Quote</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Get in <span class="text-accent">Touch</span></h1>
+    <p>Free consultation. No obligations. Let's discuss what your car needs.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="section-container">
+      <div class="two-col-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+        
+        <!-- Form -->
+        <div class="gsap-reveal">
+          <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">Send Us a Message</h2>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:2rem;">Fill out the form and we'll get back to you within 2 hours during business hours.</p>
+          
+          <form id="contactForm" class="form-grid" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
+              <span class="form-error">Please enter your name</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required autocomplete="tel">
+              <span class="form-error">Please enter a valid phone number</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" autocomplete="email">
+              <span class="form-error">Please enter a valid email</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">Your City *</label>
+              <input type="text" id="city" name="city" class="form-input" placeholder="e.g., Gurgaon" required>
+              <span class="form-error">Please enter your city</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="car">Car Make & Model</label>
+              <input type="text" id="car" name="car" class="form-input" placeholder="e.g., BMW 530d">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In *</label>
+              <select id="service" name="service" class="form-select" required>
+                <option value="" disabled selected>Select a service</option>
+                <optgroup label="Detailing & Cleaning">
+                  <option>Exterior Wash & Detailing</option>
+                  <option>Interior Deep Cleaning</option>
+                  <option>Engine Bay Cleaning</option>
+                  <option>Headlight Restoration</option>
+                  <option>Alloy Wheel Repair</option>
+                  <option>AC Sanitization</option>
+                  <option>Leather Conditioning</option>
+                </optgroup>
+                <optgroup label="Paint & Protection">
+                  <option>Paint Correction (Single-Stage)</option>
+                  <option>Paint Correction (Multi-Stage)</option>
+                  <option>Ceramic Coating</option>
+                  <option>Paint Protection Film (PPF)</option>
+                  <option>Windshield Coating</option>
+                  <option>Underbody Coating</option>
+                  <option>Scratch Removal</option>
+                </optgroup>
+                <optgroup label="Wrapping & Aesthetics">
+                  <option>Full Body Wrapping</option>
+                  <option>Partial Wraps</option>
+                  <option>Custom Paint / Airbrushing</option>
+                  <option>Window Tinting</option>
+                  <option>Custom Lighting</option>
+                </optgroup>
+                <optgroup label="Performance">
+                  <option>Body Kits & Aero</option>
+                  <option>Custom Exhaust</option>
+                  <option>ECU Remapping</option>
+                  <option>Suspension Upgrades</option>
+                  <option>Brake Upgrades</option>
+                </optgroup>
+                <optgroup label="Tech & Accessories">
+                  <option>Infotainment & Audio</option>
+                  <option>360° Camera & Sensors</option>
+                  <option>Dashcam Installation</option>
+                  <option>GPS Tracker</option>
+                  <option>Seat Covers & Upholstery</option>
+                </optgroup>
+                <optgroup label="Packages & Maintenance">
+                  <option>Essential Package</option>
+                  <option>Premium Package</option>
+                  <option>Ultimate Package</option>
+                  <option>Annual Maintenance (AMC)</option>
+                  <option>Pre-Purchase Inspection</option>
+                  <option>Insurance Claim Help</option>
+                </optgroup>
+                <option>Other / Multiple Services</option>
+              </select>
+              <span class="form-error">Please select a service</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="budget">Approximate Budget</label>
+              <select id="budget" name="budget" class="form-select">
+                <option value="" disabled selected>Select range</option>
+                <option>Under ₹5,000</option>
+                <option>₹5,000 – ₹15,000</option>
+                <option>₹15,000 – ₹30,000</option>
+                <option>₹30,000 – ₹50,000</option>
+                <option>₹50,000+</option>
+                <option>Not sure / Need advice</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your car, what you need, any specific requirements..." rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                Send Inquiry
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Message -->
+          <div class="form-success" id="formSuccess">
+            <div style="width:80px;height:80px;background:rgba(225,29,72,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 style="font-size:1.5rem;color:var(--text-primary);margin-bottom:0.5rem;">Inquiry Sent!</h3>
+            <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Thank you! We'll get back to you within 2 hours. Check your phone for a confirmation WhatsApp.</p>
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="gsap-reveal">
+          <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">Contact Information</h2>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:2rem;">Prefer to reach out directly? Here's how.</p>
+
+          <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2.5rem;">
+            <!-- Phone -->
+            <a href="tel:+919876543210" class="card" style="display:flex;align-items:center;gap:1rem;padding:1.25rem;text-decoration:none;">
+              <div style="width:48px;height:48px;background:rgba(225,29,72,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">Phone</div>
+                <div style="font-size:0.875rem;color:var(--accent);">+91 98765 43210</div>
+              </div>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/919876543210?text=Hi%20CCC!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener" class="card" style="display:flex;align-items:center;gap:1rem;padding:1.25rem;text-decoration:none;">
+              <div style="width:48px;height:48px;background:rgba(37,211,102,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">WhatsApp</div>
+                <div style="font-size:0.875rem;color:#25D366;">Chat with us instantly</div>
+              </div>
+            </a>
+            <!-- Email -->
+            <a href="mailto:hello@creativecarcustoms.in" class="card" style="display:flex;align-items:center;gap:1rem;padding:1.25rem;text-decoration:none;">
+              <div style="width:48px;height:48px;background:rgba(225,29,72,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">Email</div>
+                <div style="font-size:0.875rem;color:var(--accent);">hello@creativecarcustoms.in</div>
+              </div>
+            </a>
+            <!-- Address -->
+            <div class="card" style="display:flex;align-items:center;gap:1rem;padding:1.25rem;">
+              <div style="width:48px;height:48px;background:rgba(225,29,72,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:600;color:var(--text-primary);font-size:0.95rem;">Studio Address</div>
+                <div style="font-size:0.875rem;">Plot 42, Sector 18, Udyog Vihar,<br>Gurgaon, Haryana 122015</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="card" style="padding:1.5rem;">
+            <h3 style="font-size:1rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Business Hours
+            </h3>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;padding:0.5rem 0;border-bottom:1px solid var(--border-subtle);">
+                <span>Monday – Friday</span>
+                <span style="color:var(--text-primary);font-weight:600;">9:00 AM – 7:00 PM</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;padding:0.5rem 0;border-bottom:1px solid var(--border-subtle);">
+                <span>Saturday</span>
+                <span style="color:var(--text-primary);font-weight:600;">9:00 AM – 6:00 PM</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:0.875rem;padding:0.5rem 0;">
+                <span>Sunday</span>
+                <span style="color:var(--accent);font-weight:600;">By Appointment Only</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-container" style="margin-top:1.5rem;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5!2d77.07!3d28.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI5JzI0LjAiTiA3N8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CCC Gurgaon Studio Location"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem;">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+            <circle cx="20" cy="20" r="18" stroke="#e11d48" stroke-width="2"/>
+            <text x="20" y="25" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="900" fill="#f5f5f5">CCC</text>
+          </svg>
+          <span>Creative<span class="logo-accent">Car</span>Customs</span>
+        </a>
+        <p>Premium car detailing, protection, customization & accessories. Doorstep service across India since 2018.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="areas.html">Service Areas</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Top Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#protection">Ceramic Coating</a></li>
+          <li><a href="services.html#protection">PPF</a></li>
+          <li><a href="services.html#wrapping">Car Wrapping</a></li>
+          <li><a href="services.html#detailing">Detailing</a></li>
+          <li><a href="services.html#performance">ECU Remapping</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="mailto:hello@creativecarcustoms.in">hello@creativecarcustoms.in</a></li>
+          <li>Sector 18, Gurgaon,<br>Haryana 122015</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Creative Car Customs. All rights reserved.</span>
+      <span>Designed for car enthusiasts</span>
+    </div>
+  </footer>
+
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919999999999?text=Hi%20CCC!%20I'd%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 2.667A13.27 13.27 0 0 0 2.74 15.93a13.17 13.17 0 0 0 1.795 6.645L2.667 29.333l7.01-1.837A13.27 13.27 0 0 0 16.004 29.4 13.27 13.27 0 0 0 29.333 16.13 13.27 13.27 0 0 0 16.004 2.667Zm0 24.196a10.72 10.72 0 0 1-5.48-1.502l-.393-.234-4.074 1.068 1.087-3.971-.256-.407A10.73 10.73 0 0 1 5.29 15.93a10.72 10.72 0 0 1 10.714-10.72A10.72 10.72 0 0 1 26.784 16.13a10.73 10.73 0 0 1-10.78 10.733Zm5.88-8.03c-.322-.162-1.908-.941-2.203-1.049-.296-.108-.511-.162-.727.162s-.834 1.049-1.023 1.265c-.188.215-.376.242-.698.08a8.8 8.8 0 0 1-2.592-1.6 9.72 9.72 0 0 1-1.793-2.232c-.188-.322-.02-.497.141-.657.145-.145.323-.376.484-.565.162-.188.215-.322.323-.538.107-.215.053-.404-.027-.565-.08-.162-.727-1.752-.996-2.399-.263-.629-.53-.543-.727-.554l-.619-.01a1.19 1.19 0 0 0-.861.403c-.296.323-1.13 1.103-1.13 2.69 0 1.588 1.157 3.122 1.319 3.338.161.215 2.279 3.478 5.52 4.878.771.333 1.373.532 1.842.68.774.247 1.479.212 2.035.128.621-.092 1.908-.78 2.178-1.534.269-.753.269-1.399.188-1.534-.08-.134-.296-.215-.618-.376Z" fill="currentColor"/>
+    </svg>
+    <span class="whatsapp-float-label">Chat with us</span>
+  </a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "creative-car-customs",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
+}
