@@ -8,10 +8,10 @@
 :root {
   /* Core palette */
   --bg-primary: #050507;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-elevated: rgba(255, 255, 255, 0.05);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --bg-glass-strong: rgba(255, 255, 255, 0.08);
+  --bg-card: rgba(212, 215, 228, 0.055);
+  --bg-elevated: rgba(212, 215, 228, 0.085);
+  --bg-glass: rgba(212, 215, 228, 0.065);
+  --bg-glass-strong: rgba(212, 215, 228, 0.11);
   --accent: #e11d48;
   --accent-hover: #be123c;
   --accent-light: #fb7185;
@@ -20,15 +20,15 @@
   --text-primary: #f5f5f5;
   --text-secondary: #a3a3a3;
   --text-muted: #525252;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(220, 224, 238, 0.09);
+  --border-glass: rgba(220, 224, 238, 0.16);
   --border-accent: rgba(225, 29, 72, 0.3);
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-glass-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.28);
+  --shadow-glass-hover: 0 16px 48px rgba(0, 0, 0, 0.38);
   --shadow-glow: 0 0 40px rgba(225, 29, 72, 0.15);
-  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --glass-blur: blur(20px) saturate(1.8);
-  --glass-blur-strong: blur(40px) saturate(2);
+  --inset-highlight: inset 0 1px 0 rgba(232, 235, 248, 0.10);
+  --glass-blur: blur(24px) saturate(1.8);
+  --glass-blur-strong: blur(48px) saturate(2);
 
   /* Shared tokens */
   --radius-sm: 0.625rem;
@@ -52,11 +52,11 @@
 
 /* ---------- Light Mode ---------- */
 [data-theme="light"] {
-  --bg-primary: #f8f8fa;
-  --bg-card: rgba(255, 255, 255, 0.6);
-  --bg-elevated: rgba(255, 255, 255, 0.7);
-  --bg-glass: rgba(255, 255, 255, 0.45);
-  --bg-glass-strong: rgba(255, 255, 255, 0.65);
+  --bg-primary: #f2f3f7;
+  --bg-card: rgba(212, 215, 228, 0.42);
+  --bg-elevated: rgba(212, 215, 228, 0.55);
+  --bg-glass: rgba(212, 215, 228, 0.36);
+  --bg-glass-strong: rgba(212, 215, 228, 0.52);
   --accent: #e11d48;
   --accent-hover: #be123c;
   --accent-light: #fb7185;
@@ -65,15 +65,15 @@
   --text-primary: #0f0f12;
   --text-secondary: #52525b;
   --text-muted: #a1a1aa;
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-glass: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(148, 152, 172, 0.16);
+  --border-glass: rgba(148, 152, 172, 0.26);
   --border-accent: rgba(225, 29, 72, 0.25);
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-glass-hover: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 8px 32px rgba(60, 65, 90, 0.10);
+  --shadow-glass-hover: 0 16px 48px rgba(60, 65, 90, 0.16);
   --shadow-glow: 0 0 40px rgba(225, 29, 72, 0.08);
-  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  --glass-blur: blur(20px) saturate(1.6);
-  --glass-blur-strong: blur(40px) saturate(1.8);
+  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --glass-blur: blur(24px) saturate(1.8);
+  --glass-blur-strong: blur(48px) saturate(2);
 }
 
 /* Smooth theme transition */
@@ -708,7 +708,7 @@ img {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(220, 224, 240, 0.18), transparent);
   pointer-events: none;
 }
 
@@ -894,7 +894,7 @@ img {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(220, 224, 240, 0.16), transparent);
   pointer-events: none;
 }
 
@@ -1260,7 +1260,7 @@ img {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(220, 224, 240, 0.16), transparent);
   pointer-events: none;
 }
 
@@ -1329,7 +1329,7 @@ img {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(220, 224, 240, 0.16), transparent);
   pointer-events: none;
 }
 
