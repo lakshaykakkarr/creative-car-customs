@@ -28,12 +28,16 @@ jobs:
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build
 
-      - name: Install rsync + sshpass
-        run: sudo apt-get install -y rsync sshpass
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
 
-      - name: Deploy via rsync over SSH
+      - name: Deploy via SFTP
         run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -avz --delete \
-            -e "ssh -p 65002 -o StrictHostKeyChecking=no" \
-            dist/ \
-            ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:public_html/
+          lftp -u "${{ secrets.SSH_USERNAME }}","${{ secrets.SSH_PASSWORD }}" \
+            -p 65002 \
+            sftp://${{ secrets.SSH_HOST }} <<'EOF'
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          mirror -R --delete --verbose dist/ public_html/
+          bye
+          EOF
