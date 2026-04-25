@@ -32,12 +32,10 @@ jobs:
         run: sudo apt-get install -y lftp
 
       - name: Deploy via SFTP
+        env:
+          SFTP_USER: ${{ secrets.SSH_USERNAME }}
+          SFTP_PASS: ${{ secrets.SSH_PASSWORD }}
+          SFTP_HOST: ${{ secrets.SSH_HOST }}
         run: |
-          lftp -u "${{ secrets.SSH_USERNAME }}","${{ secrets.SSH_PASSWORD }}" \
-            -p 65002 \
-            sftp://${{ secrets.SSH_HOST }} <<'EOF'
-          set sftp:auto-confirm yes
-          set net:max-retries 3
-          mirror -R --delete --verbose dist/ public_html/
-          bye
-          EOF
+          lftp -e "set sftp:auto-confirm yes; set net:max-retries 3; mirror -R --delete dist/ public_html/; quit" \
+            "sftp://${SFTP_USER}:${SFTP_PASS}@${SFTP_HOST}:65002"
