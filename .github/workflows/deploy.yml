@@ -28,15 +28,14 @@ jobs:
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to Hostinger via SSH
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_HOST }}
-          port: 21
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
+          host: ${{ secrets.SSH_HOST }}
+          port: 65002
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "dist/*"
+          target: "public_html"
+          strip_components: 1
+          rm: false
