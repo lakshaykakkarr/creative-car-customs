@@ -28,14 +28,12 @@ jobs:
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build
 
-      - name: Deploy to Hostinger via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          port: 65002
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: "dist/*"
-          target: "/home/${{ secrets.SSH_USERNAME }}/public_html"
-          strip_components: 1
-          rm: false
+      - name: Install rsync + sshpass
+        run: sudo apt-get install -y rsync sshpass
+
+      - name: Deploy via rsync over SSH
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -avz --delete \
+            -e "ssh -p 65002 -o StrictHostKeyChecking=no" \
+            dist/ \
+            ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:public_html/
