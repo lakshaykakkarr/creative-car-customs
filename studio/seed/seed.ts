@@ -150,6 +150,59 @@ async function seedPageContent() {
       storyTitle: 'From a Garage Dream to',
       storyTitleAccent: "India's Premium Car Care Brand",
       storyImageUrl: 'https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600&q=80',
+      storyBody: [
+        {
+          _key: 'block-1',
+          _type: 'block',
+          children: [
+            {
+              _key: 'span-1',
+              _type: 'span',
+              text: 'Creative Car Customs wasn\'t born in a boardroom—it was born in the mind of a kid who fell in love with cars the moment they could walk. While other kids dreamed of becoming doctors or engineers, this young enthusiast spent garage hours studying every detail of automobiles, learning how a single tweak could transform not just a car\'s performance, but the entire experience of driving it.',
+              marks: [],
+            },
+          ],
+          style: 'normal',
+        },
+        {
+          _key: 'block-2',
+          _type: 'block',
+          children: [
+            {
+              _key: 'span-2',
+              _type: 'span',
+              text: 'That passion never faded. Instead, it grew into an ambition—to build India\'s biggest car care brand. To create a place where every car owner, regardless of where they live or what they drive, could access ',
+              marks: [],
+            },
+            {
+              _key: 'span-3',
+              _type: 'span',
+              text: 'world-class car care',
+              marks: ['strong'],
+            },
+            {
+              _key: 'span-4',
+              _type: 'span',
+              text: ' without compromise. To turn that childhood passion into something that serves thousands.',
+              marks: [],
+            },
+          ],
+          style: 'normal',
+        },
+        {
+          _key: 'block-3',
+          _type: 'block',
+          children: [
+            {
+              _key: 'span-5',
+              _type: 'span',
+              text: "Today, Creative Car Customs is that dream realized. With a team of experts who share the same passion, we've helped thousands of car owners protect, enhance, and customize their vehicles. But our journey doesn't stop here—it's just the beginning. We're building the future of automotive aftercare in India, one perfectly detailed car at a time.",
+              marks: [],
+            },
+          ],
+          style: 'normal',
+        },
+      ],
       missionText:
         'To deliver world-class car care experiences that are accessible, convenient, and uncompromising in quality — right at your doorstep, anywhere in India.',
       visionText:

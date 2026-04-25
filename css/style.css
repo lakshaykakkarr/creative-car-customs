@@ -753,6 +753,28 @@ img {
   line-height: 1.7;
 }
 
+/* ---------- Story Body ---------- */
+#storyBody {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  letter-spacing: 0.3px;
+}
+
+#storyBody p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+#storyBody p:last-child {
+  margin-bottom: 0;
+}
+
+#storyBody strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ---------- Stats ---------- */
 .stats-grid {
   display: grid;
