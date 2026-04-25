@@ -114,7 +114,7 @@ async function seedHomePage() {
     servicesSectionLabel: 'What We Do',
     servicesSectionTitle: 'End-to-End Car Care',
     servicesSectionDesc:
-      'From a simple wash to full custom builds — we handle 51+ premium automotive services across detailing, protection, wrapping, performance, tech upgrades, and maintenance. Everything your car needs under one roof.',
+      'From a simple wash to full custom builds — we handle 61+ premium automotive services across detailing, protection, wrapping, performance, tech upgrades, and maintenance. Everything your car needs under one roof.',
     sliderSectionLabel: 'Transformations',
     sliderSectionTitle: 'See the Difference',
     sliderSectionDesc:
@@ -217,14 +217,14 @@ async function seedPageContent() {
       _id: 'page-services',
       _type: 'pageContent',
       page: 'services',
-      metaTitle: 'Services — Creative Car Customs | 51 End-to-End Car Services',
+      metaTitle: 'Services — Creative Car Customs | 61 End-to-End Car Services',
       metaDescription:
-        'Browse all 51 car care services by Creative Car Customs — detailing, ceramic coating, PPF, car wrapping, ECU remapping, infotainment & more. Prices starting ₹999.',
+        'Browse all 61 car care services by Creative Car Customs — detailing, ceramic coating, PPF, car wrapping, ECU remapping, infotainment & more. Prices starting ₹999.',
       heroHeading: 'Our',
       heroHeadingAccent: 'Services',
       heroSubtitle:
-        '51 end-to-end car services — from a basic wash to full custom builds. Everything your car needs, under one roof.',
-      servicesHeroServiceCount: 51,
+        '61 end-to-end car services — from a basic wash to full custom builds. Everything your car needs, under one roof.',
+      servicesHeroServiceCount: 61,
       servicesProcessLabel: 'How It Works',
       servicesProcessTitle: 'Our Service Process',
       servicesFaqTitle: 'Frequently Asked Questions',
