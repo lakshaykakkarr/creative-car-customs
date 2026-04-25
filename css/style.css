@@ -818,12 +818,13 @@ img {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 4px;
+  width: 6px;
   height: 100%;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), rgba(225, 29, 72, 0.6));
   transform: translateX(-50%);
   z-index: 10;
   pointer-events: none;
+  box-shadow: -8px 0 24px rgba(225, 29, 72, 0.25), 8px 0 24px rgba(225, 29, 72, 0.15);
 }
 
 .ba-handle::before {
@@ -832,26 +833,33 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  background: var(--accent);
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent), rgba(225, 29, 72, 0.8));
+  border-radius: 12px;
+  border: 0 solid #fff;
+  box-shadow: 0 8px 32px rgba(225, 29, 72, 0.35), inset 0 -2px 8px rgba(0, 0, 0, 0.2);
   pointer-events: all;
   cursor: ew-resize;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.ba-handle:hover::before {
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 12px 40px rgba(225, 29, 72, 0.45), inset 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ba-handle::after {
-  content: '◄ ►';
+  content: '‹    ›';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 4px;
   z-index: 1;
   pointer-events: none;
 }

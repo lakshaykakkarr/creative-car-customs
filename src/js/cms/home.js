@@ -194,10 +194,12 @@ function _setSectionHeader(headerId, label, title, desc) {
   if (label) {
     const labelEl = header.querySelector('.section-label');
     if (labelEl) {
-      // Replace trailing text node, preserving any leading SVG
-      const textNode = Array.from(labelEl.childNodes).find(n => n.nodeType === 3);
-      if (textNode) { textNode.textContent = ' ' + label; }
-      else { labelEl.insertAdjacentText('beforeend', ' ' + label); }
+      // Clear ALL text nodes, keep SVG only
+      Array.from(labelEl.childNodes).forEach(node => {
+        if (node.nodeType === 3) node.remove(); // Remove text nodes
+      });
+      // Add new label text
+      labelEl.appendChild(document.createTextNode(' ' + label));
       updated = true;
     }
   }
