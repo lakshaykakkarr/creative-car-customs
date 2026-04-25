@@ -5,7 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  ftp-deploy:
+    name: Build and FTP Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -28,14 +29,18 @@ jobs:
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
+      - name: Deploy files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: ./dist/
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
 
-      - name: Deploy via SFTP
-        env:
-          SFTP_USER: ${{ secrets.SSH_USERNAME }}
-          SFTP_PASS: ${{ secrets.SSH_PASSWORD }}
-          SFTP_HOST: ${{ secrets.SSH_HOST }}
-        run: |
-          lftp -e "set sftp:auto-confirm yes; set net:max-retries 3; mirror -R --delete dist/ public_html/; quit" \
-            "sftp://${SFTP_USER}:${SFTP_PASS}@${SFTP_HOST}:65002"
