@@ -39,6 +39,8 @@ jobs:
  port: 21
  local-dir: ./dist/
  server-dir: /public_html/
- 
- - name: Add deploy timestamp
- run: date > ./dist/deploy-timestamp.txt
+ dangerous-clean-slate: true
+ exclude: |
+ **/.git*
+ **/.github/**
+ **/node_modules/**
