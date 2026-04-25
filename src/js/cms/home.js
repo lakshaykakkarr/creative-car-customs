@@ -7,6 +7,16 @@
 import { client, esc, renderStars } from '../sanity.js';
 import { revealElements } from '../gsap-utils.js';
 
+// Lucide-based SVG icons (MIT) keyed by category slug
+const CATEGORY_ICONS = {
+  detailing:   `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>`,
+  protection:  `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  wrapping:    `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>`,
+  performance: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+  tech:        `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+  maintenance: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+};
+
 const HOME_QUERY = `{
   "page": *[_type == "homePage"][0]{
     metaTitle, metaDescription, heroBadge, heroTitle, heroTitleAccent,
@@ -52,17 +62,20 @@ export async function renderHome() {
       const countMap = {};
       (serviceCounts || []).forEach(s => { countMap[s.category] = (countMap[s.category] || 0) + 1; });
 
-      catGrid.innerHTML = categories.map(cat => `
+      catGrid.innerHTML = categories.map(cat => {
+        const slug = cat.slug?.current || cat.slug || '';
+        const catIcon = CATEGORY_ICONS[slug] || CATEGORY_ICONS.maintenance;
+        return `
         <a href="services.html#${esc(cat.slug?.current || cat.slug || '')}" class="card gsap-reveal" style="text-decoration:none;">
-          <div class="card-icon" style="font-size:1.75rem;display:flex;align-items:center;justify-content:center;">${esc(cat.icon || '🔧')}</div>
+          <div class="card-icon" style="display:flex;align-items:center;justify-content:center;color:var(--accent);">${catIcon}</div>
           <h3 class="card-title">${esc(cat.title)}</h3>
           <p class="card-text">${esc(cat.cardDescription || '')}</p>
           <span style="color:var(--accent);font-size:0.85rem;font-weight:600;margin-top:1rem;display:inline-flex;align-items:center;gap:0.35rem;">
             ${countMap[cat.slug?.current || cat.slug] || 0} Services
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
-        </a>
-      `).join('');
+        </a>`;
+      }).join('');
       revealElements(catGrid);
     }
 

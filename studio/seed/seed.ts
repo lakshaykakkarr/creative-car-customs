@@ -3,7 +3,7 @@ import { createClient } from '@sanity/client'
 
 const token = process.env.SANITY_TOKEN
 if (!token) {
-  console.error('❌  SANITY_TOKEN not found in .env')
+  console.error('[ERROR] SANITY_TOKEN not found in .env')
   process.exit(1)
 }
 
@@ -30,7 +30,7 @@ async function upsertMany(docs: Record<string, unknown>[]) {
 // ─── 1. Site Settings ─────────────────────────────────────────────────────────
 
 async function seedSiteSettings() {
-  console.log('\n⚙️  Site Settings')
+  console.log('[config] Site Settings')
   await upsert({
     _id: 'siteSettings',
     _type: 'siteSettings',
@@ -57,7 +57,7 @@ async function seedSiteSettings() {
 // ─── 2. Business Hours ────────────────────────────────────────────────────────
 
 async function seedBusinessHours() {
-  console.log('\n🕐  Business Hours')
+  console.log('[hours] Business Hours')
   await upsertMany([
     {
       _id: 'bh-mon-fri',
@@ -92,7 +92,7 @@ async function seedBusinessHours() {
 // ─── 3. Home Page ─────────────────────────────────────────────────────────────
 
 async function seedHomePage() {
-  console.log('\n🏠  Home Page')
+  console.log('[home] Home Page')
   await upsert({
     _id: 'homePage',
     _type: 'homePage',
@@ -127,7 +127,7 @@ async function seedHomePage() {
 // ─── 4. Page Content ──────────────────────────────────────────────────────────
 
 async function seedPageContent() {
-  console.log('\n📄  Page Content')
+  console.log('[content] Page Content')
   await upsertMany([
     {
       _id: 'page-about',
@@ -224,7 +224,7 @@ async function seedPageContent() {
 // ─── 5. Service Categories ────────────────────────────────────────────────────
 
 async function seedServiceCategories() {
-  console.log('\n🗂️  Service Categories')
+  console.log('[categories] Service Categories')
   await upsertMany([
     {
       _id: 'cat-detailing',
@@ -233,7 +233,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'detailing' },
       tabLabel: 'Detailing & Cleaning',
       cardDescription: 'Exterior wash, interior deep clean, engine bay, headlight restoration, leather care & more',
-      icon: '🚿',
+      icon: 'droplets',
       order: 1,
     },
     {
@@ -243,7 +243,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'protection' },
       tabLabel: 'Paint & Protection',
       cardDescription: 'Paint correction, ceramic coating, PPF, underbody coating, windshield coating & scratch removal',
-      icon: '🛡️',
+      icon: 'shield',
       order: 2,
     },
     {
@@ -253,7 +253,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'wrapping' },
       tabLabel: 'Wrapping & Aesthetics',
       cardDescription: 'Full body wraps, partial wraps, custom paint, window tinting, custom lighting & more',
-      icon: '🎨',
+      icon: 'palette',
       order: 3,
     },
     {
@@ -263,7 +263,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'performance' },
       tabLabel: 'Performance',
       cardDescription: 'Body kits, custom exhaust, ECU remapping, suspension upgrades, brake upgrades & sunroof service',
-      icon: '⚡',
+      icon: 'zap',
       order: 4,
     },
     {
@@ -273,7 +273,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'tech' },
       tabLabel: 'Tech & Accessories',
       cardDescription: 'Infotainment, 360° cameras, dashcams, GPS trackers, seat covers, interior trim & fragrance systems',
-      icon: '📡',
+      icon: 'cpu',
       order: 5,
     },
     {
@@ -283,7 +283,7 @@ async function seedServiceCategories() {
       slug: { _type: 'slug', current: 'maintenance' },
       tabLabel: 'Maintenance',
       cardDescription: 'Annual maintenance packages, pre-purchase car inspection & insurance claim assistance',
-      icon: '🔧',
+      icon: 'wrench',
       order: 6,
     },
   ])
@@ -292,7 +292,7 @@ async function seedServiceCategories() {
 // ─── 6. Services ──────────────────────────────────────────────────────────────
 
 async function seedServices() {
-  console.log('\n🔧  Services')
+  console.log('[services] Services')
   const services: Record<string, unknown>[] = [
     // ── Detailing & Cleaning
     {
@@ -674,7 +674,7 @@ async function seedServices() {
 // ─── 7. Service Packages ──────────────────────────────────────────────────────
 
 async function seedServicePackages() {
-  console.log('\n📦  Service Packages')
+  console.log('[packages] Service Packages')
   await upsertMany([
     {
       _id: 'pkg-essential',
@@ -736,7 +736,7 @@ async function seedServicePackages() {
 // ─── 8. Testimonials ──────────────────────────────────────────────────────────
 
 async function seedTestimonials() {
-  console.log('\n⭐  Testimonials')
+  console.log('[testimonials] Testimonials')
   await upsertMany([
     {
       _id: 'testi-01',
@@ -809,7 +809,7 @@ async function seedTestimonials() {
 // ─── 9. Gallery Items ─────────────────────────────────────────────────────────
 
 async function seedGalleryItems() {
-  console.log('\n🖼️  Gallery Items')
+  console.log('[gallery] Gallery Items')
   const base = 'https://images.unsplash.com/'
   await upsertMany([
     {
@@ -902,7 +902,7 @@ async function seedGalleryItems() {
 // ─── 10. Before & After Sliders ───────────────────────────────────────────────
 
 async function seedBeforeAfterSliders() {
-  console.log('\n↔️  Before & After Sliders')
+  console.log('[sliders] Before & After Sliders')
   const base = 'https://images.unsplash.com/'
   await upsertMany([
     {
@@ -944,7 +944,7 @@ async function seedBeforeAfterSliders() {
 // ─── 11. Team Members ─────────────────────────────────────────────────────────
 
 async function seedTeamMembers() {
-  console.log('\n👥  Team Members')
+  console.log('[team] Team Members')
   await upsertMany([
     {
       _id: 'team-01',
@@ -979,7 +979,7 @@ async function seedTeamMembers() {
 // ─── 12. Stats ────────────────────────────────────────────────────────────────
 
 async function seedStats() {
-  console.log('\n📊  Stats')
+  console.log('[stats] Stats')
   await upsertMany([
     { _id: 'stat-01', _type: 'stat', value: 15000, suffix: '+', label: 'Cars Detailed', order: 1 },
     { _id: 'stat-02', _type: 'stat', value: 50, suffix: '+', label: 'Cities Served', order: 2 },
@@ -991,7 +991,7 @@ async function seedStats() {
 // ─── 13. FAQ ──────────────────────────────────────────────────────────────────
 
 async function seedFaqs() {
-  console.log('\n❓  FAQs')
+  console.log('[faqs] FAQs')
   await upsertMany([
     {
       _id: 'faq-01',
@@ -1039,7 +1039,7 @@ async function seedFaqs() {
 // ─── 14. Service Areas ────────────────────────────────────────────────────────
 
 async function seedServiceAreas() {
-  console.log('\n🗺️  Service Areas')
+  console.log('[areas] Service Areas')
   const areas: Record<string, unknown>[] = [
     // North
     { _id: 'area-n-01', region: 'north', cityName: 'Delhi NCR', isHQ: true, order: 1 },
@@ -1077,7 +1077,7 @@ async function seedServiceAreas() {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🚀  Starting CCC seed — project w4fgl3xy / production\n')
+  console.log('[start] Starting CCC seed — project w4fgl3xy / production\n')
   try {
     await seedSiteSettings()
     await seedBusinessHours()
@@ -1093,9 +1093,9 @@ async function main() {
     await seedStats()
     await seedFaqs()
     await seedServiceAreas()
-    console.log('\n✅  Seed complete! All documents created/updated in Sanity.')
+    console.log('\n[done] Seed complete! All documents created/updated in Sanity.')
   } catch (err) {
-    console.error('\n❌  Seed failed:', err)
+    console.error('\n[ERROR] Seed failed:', err)
     process.exit(1)
   }
 }

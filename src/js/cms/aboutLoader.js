@@ -83,7 +83,7 @@ export async function renderAbout() {
     if (teamEl && team?.length) {
       teamEl.innerHTML = team.map(m => `
         <div class="card gsap-reveal" style="text-align:center;">
-          <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;margin:0 auto 1rem;">${esc(m.initials || m.name.split(' ').map(n => n[0]).join(''))}</div>
+          <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;margin:0 auto 1rem;">${esc(m.initials || m.name.split(' ').map(n => n[0]).join(''))}</div>
           <h3 class="card-title">${esc(m.name)}</h3>
           <p style="color:var(--accent);font-size:0.875rem;font-weight:600;margin-bottom:0.75rem;">${esc(m.role)}</p>
           <p class="card-text">${esc(m.bio || '')}</p>

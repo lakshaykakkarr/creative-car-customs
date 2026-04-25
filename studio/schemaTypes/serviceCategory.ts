@@ -24,7 +24,7 @@ export default defineType({
       name: 'icon',
       title: 'Icon Emoji',
       type: 'string',
-      description: 'e.g. 🚿 or 🎨',
+      description: 'Lucide icon name, e.g. droplets, shield, palette, zap, cpu, wrench',
     }),
     defineField({ name: 'order', title: 'Display Order', type: 'number' }),
   ],
