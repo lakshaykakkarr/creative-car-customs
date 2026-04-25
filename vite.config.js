@@ -13,6 +13,7 @@ export default defineConfig({
         gallery:  resolve(__dirname, 'gallery.html'),
         areas:    resolve(__dirname, 'areas.html'),
         contact:  resolve(__dirname, 'contact.html'),
+        approve:  resolve(__dirname, 'approve.html'),
       },
     },
   },

@@ -40,7 +40,7 @@ const HOME_QUERY = `{
   "stats": *[_type == "stat"] | order(order asc) {
     value, suffix, label
   },
-  "testimonials": *[_type == "testimonial"] | order(order asc) {
+  "testimonials": *[_type == "testimonial" && (status == "approved" || !defined(status))] | order(order asc) {
     reviewerName, initials, carMake, carModel, city, rating, quote
   }
 }`;

@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/assets/logo-D3MxaZLu.svg">
-  <script type="module" crossorigin src="/assets/contact-BBq45MeX.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-B3kV9SXb.js">
-  <link rel="stylesheet" crossorigin href="/assets/main-BZvP4Dmy.css">
+  <script type="module" crossorigin src="/assets/contact-CB1jVTVG.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/style-DoNo18HB.js">
+  <link rel="modulepreload" crossorigin href="/assets/main-DM4PNtuN.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DLzl7ElV.css">
 </head>
 <body class="grain">
 
@@ -262,6 +263,151 @@
           <!-- Map -->
           <div class="map-container" style="margin-top:1.5rem;">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5!2d77.07!3d28.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI5JzI0LjAiTiA3N8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CCC Gurgaon Studio Location"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback Section -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-container">
+      <div class="section-header gsap-reveal">
+        <div class="section-label">Your Voice Matters</div>
+        <h2 class="section-title">Share Your <span class="text-accent">Experience</span></h2>
+        <p class="section-desc">Loved your visit? Tell us about it. Approved reviews appear on our homepage.</p>
+      </div>
+      <div style="max-width:720px;margin:0 auto;">
+        <div class="gsap-reveal">
+          <!-- NOTE: Replace YOUR_FORM_ID with your Formspree endpoint ID after creating the form at formspree.io -->
+          <form id="feedbackForm" action="https://formspree.io/f/mkokeokv" method="POST" novalidate>
+            <!-- Honeypot anti-spam: bots fill this, humans don't -->
+            <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="New Customer Feedback — Creative Car Customs">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="fb-name">Full Name *</label>
+                <input type="text" id="fb-name" name="name" class="form-input" placeholder="Rahul Kapoor" required autocomplete="name">
+                <span class="form-error">Please enter your name</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fb-city">City *</label>
+                <input type="text" id="fb-city" name="city" class="form-input" placeholder="e.g., Gurgaon" required>
+                <span class="form-error">Please enter your city</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fb-car-make">Car Make</label>
+                <input type="text" id="fb-car-make" name="carMake" class="form-input" placeholder="e.g., BMW">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fb-car-model">Car Model</label>
+                <input type="text" id="fb-car-model" name="carModel" class="form-input" placeholder="e.g., 530d">
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="fb-service">Service Received *</label>
+                <select id="fb-service" name="service" class="form-select" required>
+                  <option value="" disabled selected>Select the service you received</option>
+                  <optgroup label="Detailing & Cleaning">
+                    <option>Exterior Wash & Detailing</option>
+                    <option>Interior Deep Cleaning</option>
+                    <option>Engine Bay Cleaning</option>
+                    <option>Headlight Restoration</option>
+                    <option>Alloy Wheel Repair</option>
+                    <option>AC Sanitization</option>
+                    <option>Leather Conditioning</option>
+                  </optgroup>
+                  <optgroup label="Paint & Protection">
+                    <option>Paint Correction</option>
+                    <option>Ceramic Coating</option>
+                    <option>Paint Protection Film (PPF)</option>
+                    <option>Windshield Coating</option>
+                    <option>Underbody Coating</option>
+                    <option>Scratch Removal</option>
+                  </optgroup>
+                  <optgroup label="Wrapping & Aesthetics">
+                    <option>Full Body Wrapping</option>
+                    <option>Partial Wraps</option>
+                    <option>Window Tinting</option>
+                    <option>Custom Lighting</option>
+                  </optgroup>
+                  <optgroup label="Performance">
+                    <option>Body Kits & Aero</option>
+                    <option>Custom Exhaust</option>
+                    <option>ECU Remapping</option>
+                    <option>Suspension Upgrades</option>
+                    <option>Brake Upgrades</option>
+                  </optgroup>
+                  <optgroup label="Tech & Accessories">
+                    <option>Infotainment & Audio</option>
+                    <option>360 Camera & Sensors</option>
+                    <option>Dashcam Installation</option>
+                    <option>GPS Tracker</option>
+                    <option>Seat Covers & Upholstery</option>
+                  </optgroup>
+                  <optgroup label="Packages & Maintenance">
+                    <option>Essential Package</option>
+                    <option>Premium Package</option>
+                    <option>Ultimate Package</option>
+                    <option>Annual Maintenance (AMC)</option>
+                  </optgroup>
+                  <option>Other / Multiple Services</option>
+                </select>
+                <span class="form-error">Please select a service</span>
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Your Rating *</label>
+                <div class="rating-stars" id="ratingStars" role="group" aria-label="Star rating">
+                  <button type="button" class="star" data-value="1" aria-label="1 star">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                  <button type="button" class="star" data-value="2" aria-label="2 stars">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                  <button type="button" class="star" data-value="3" aria-label="3 stars">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                  <button type="button" class="star" data-value="4" aria-label="4 stars">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                  <button type="button" class="star" data-value="5" aria-label="5 stars">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                </div>
+                <input type="hidden" id="fb-rating" name="rating" value="">
+                <span class="form-error" id="ratingError" style="display:none;">Please select a rating</span>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="fb-comment">Your Review *</label>
+                <textarea id="fb-comment" name="comment" class="form-textarea" placeholder="Tell us about your experience — what did you love most?" rows="4" required></textarea>
+                <span class="form-error">Please write at least 20 characters</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fb-email">Email (Optional)</label>
+                <input type="email" id="fb-email" name="email" class="form-input" placeholder="john@example.com" autocomplete="email">
+                <span class="form-error">Please enter a valid email</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fb-phone">Phone (Optional)</label>
+                <input type="tel" id="fb-phone" name="phone" class="form-input" placeholder="+91 98765 43210" autocomplete="tel">
+                <span class="form-error">Please enter a valid phone number</span>
+              </div>
+              <div class="form-group full">
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                  Submit Feedback
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Feedback Success Message -->
+          <div class="form-success" id="feedbackSuccess">
+            <div style="width:80px;height:80px;background:rgba(225,29,72,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 style="font-size:1.5rem;color:var(--text-primary);margin-bottom:0.5rem;">Thank You!</h3>
+            <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Your feedback has been received. Once reviewed by our team, it may appear on our website.</p>
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
           </div>
         </div>
       </div>

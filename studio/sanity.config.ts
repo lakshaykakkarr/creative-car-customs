@@ -41,7 +41,40 @@ export default defineConfig({
             S.documentTypeListItem('serviceCategory').title('Service Categories'),
             S.documentTypeListItem('servicePackage').title('Service Packages'),
             S.divider(),
-            S.documentTypeListItem('testimonial').title('Testimonials'),
+            S.listItem()
+              .title('Testimonials & Feedback')
+              .child(
+                S.list()
+                  .title('Testimonials & Feedback')
+                  .items([
+                    S.listItem()
+                      .title('Pending Review')
+                      .child(
+                        S.documentList()
+                          .title('Pending Review')
+                          .filter('_type == "testimonial" && status == "pending"')
+                          .schemaType('testimonial'),
+                      ),
+                    S.listItem()
+                      .title('Approved')
+                      .child(
+                        S.documentList()
+                          .title('Approved')
+                          .filter('_type == "testimonial" && status == "approved"')
+                          .schemaType('testimonial'),
+                      ),
+                    S.listItem()
+                      .title('Discarded')
+                      .child(
+                        S.documentList()
+                          .title('Discarded')
+                          .filter('_type == "testimonial" && status == "discarded"')
+                          .schemaType('testimonial'),
+                      ),
+                    S.divider(),
+                    S.documentTypeListItem('testimonial').title('All Testimonials'),
+                  ]),
+              ),
             S.documentTypeListItem('galleryItem').title('Gallery Items'),
             S.documentTypeListItem('beforeAfterSlider').title('Before & After Sliders'),
             S.divider(),

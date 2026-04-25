@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/assets/logo-D3MxaZLu.svg">
-  <script type="module" crossorigin src="/assets/main-B3kV9SXb.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-BZvP4Dmy.css">
+  <script type="module" crossorigin src="/assets/style-DoNo18HB.js"></script>
+  <script type="module" crossorigin src="/assets/main-DM4PNtuN.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/style-DLzl7ElV.css">
 </head>
 <body class="grain">
 
@@ -75,7 +76,7 @@
               </div>
               <div>
                 <div style="font-weight:600;color:var(--text-primary);font-size:0.9rem;">Address</div>
-                <div style="font-size:0.875rem;">Plot 42, Sector 18, Udyog Vihar, Gurgaon, Haryana 122015</div>
+                <div style="font-size:0.875rem;" id="hqAddress">Plot 42, Sector 18, Udyog Vihar, Gurgaon, Haryana 122015</div>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -84,7 +85,7 @@
               </div>
               <div>
                 <div style="font-weight:600;color:var(--text-primary);font-size:0.9rem;">Phone</div>
-                <div style="font-size:0.875rem;"><a href="tel:+919876543210" style="color:var(--accent);">+91 98765 43210</a></div>
+                <div style="font-size:0.875rem;"><a id="hqPhone" href="tel:+919876543210" style="color:var(--accent);">+91 98765 43210</a></div>
               </div>
             </div>
             <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -93,7 +94,7 @@
               </div>
               <div>
                 <div style="font-weight:600;color:var(--text-primary);font-size:0.9rem;">Working Hours</div>
-                <div style="font-size:0.875rem;">Mon–Sat: 9:00 AM – 7:00 PM | Sun: By Appointment</div>
+                <div style="font-size:0.875rem;" id="hqHours">Mon–Sat: 9:00 AM – 7:00 PM | Sun: By Appointment</div>
               </div>
             </div>
           </div>
@@ -115,7 +116,7 @@
   <section class="section bg-section-alt">
     <div class="section-container">
       <div class="section-header gsap-reveal">
-        <div class="section-label">🇮🇳 Pan-India Network</div>
+        <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Pan-India Network</div>
         <h2 class="section-title">50+ Cities Served</h2>
         <p class="section-desc">Our mobile service teams are deployed across India. If your city isn't listed, contact us — we'll make it work.</p>
       </div>
@@ -183,13 +184,13 @@
   <!-- How Doorstep Works -->
   <section class="section">
     <div class="section-container">
-      <div class="section-header gsap-reveal">
-        <div class="section-label">🚐 Doorstep Service</div>
+      <div class="section-header gsap-reveal" id="doorstepSectionHeader">
+        <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Doorstep Service</div>
         <h2 class="section-title">How It Works</h2>
         <p class="section-desc">Your driveway becomes our workshop. Here's how the magic happens.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto;">
+      <div id="doorstepSteps" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto;">
         <div class="card gsap-reveal" style="text-align:center;position:relative;">
           <div style="position:absolute;top:1.5rem;right:1.5rem;width:36px;height:36px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;">1</div>
           <div class="card-icon" style="margin:0 auto 1.25rem;">
@@ -221,7 +222,7 @@
   <!-- CTA -->
   <section class="section bg-section-alt">
     <div class="section-container">
-      <div class="cta-banner gsap-reveal">
+      <div class="cta-banner gsap-reveal" id="areasCTABanner">
         <h2>Your City, Your Driveway, Our Service</h2>
         <p>No workshop visits needed. Premium car care delivered wherever you are in India.</p>
         <a href="contact.html" class="btn">

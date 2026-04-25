@@ -11,6 +11,7 @@ import { renderGallery } from './cms/galleryLoader.js';
 import { renderAbout } from './cms/aboutLoader.js';
 import { renderAreas } from './cms/areasLoader.js';
 import { renderContact } from './cms/contactLoader.js';
+import { initFeedbackForm } from './feedback-form.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (document.getElementById('teamGrid'))           renderAbout();
   else if (document.getElementById('areasGrid'))          renderAreas();
   else if (document.getElementById('businessHoursContact')) renderContact();
+
+  // ---- Feedback form (contact page) ----
+  if (document.getElementById('feedbackForm')) initFeedbackForm();
 
   // ---- Theme Toggle ----
   const htmlEl = document.documentElement;
