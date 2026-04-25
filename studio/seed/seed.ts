@@ -172,6 +172,8 @@ async function seedPageContent() {
       heroSubtitle:
         '51 end-to-end car services — from a basic wash to full custom builds. Everything your car needs, under one roof.',
       servicesHeroServiceCount: 51,
+      servicesProcessLabel: 'How It Works',
+      servicesProcessTitle: 'Our Service Process',
       servicesFaqTitle: 'Frequently Asked Questions',
       servicesProcessSteps: [
         { step: 1, title: 'Book Online', description: 'Fill the form or call us' },
@@ -213,6 +215,13 @@ async function seedPageContent() {
         "Don't see your city? Get in touch — we're expanding every month.",
       ctaBannerBtnText: 'Book Doorstep Service',
       ctaBannerBtnUrl: 'contact.html',
+      areasDooorstepLabel: 'Doorstep Service',
+      areasDooorstepTitle: 'How It Works',
+      areasDooorstepSteps: [
+        { title: 'Book & Consult', description: "Fill our form, call, or WhatsApp us. We'll discuss your car's needs and confirm pricing before we arrive." },
+        { title: 'We Come to You', description: 'Our fully-equipped mobile unit arrives at your home, office, or preferred location — on schedule.' },
+        { title: 'Inspect & Enjoy', description: "We walk you through every detail once done. We don't leave until you're 100% satisfied." },
+      ],
     },
     {
       _id: 'page-contact',
