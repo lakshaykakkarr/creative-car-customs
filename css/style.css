@@ -359,6 +359,14 @@ img {
 
 /* Mobile Nav */
 @media (max-width: 768px) {
+  /* Switch to flex: fixed-positioned nav-links are out of flow,
+     so logo naturally sits left and nav-right is pushed to the far edge */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .nav-right .hamburger {
     display: flex;
   }
@@ -781,6 +789,17 @@ img {
 }
 
 /* ---------- Contact Page Tabs ---------- */
+.contact-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.contact-tabs-wrapper .tabs-nav {
+  max-width: 460px;
+  width: 100%;
+}
+
 .contact-panel {
   /* Inherits display:none / display:block from .tab-content / .tab-content.active */
   min-height: 60vh;
@@ -2392,5 +2411,52 @@ img {
   .whatsapp-float svg {
     width: 1.75rem;
     height: 1.75rem;
+  }
+}
+
+/* ============================================================
+   GLOBAL RESPONSIVE — mobile padding & contact page fixes
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Section vertical breathing room */
+  .section {
+    padding: 4.5rem 1.25rem;
+  }
+
+  /* Page hero — reduce top padding */
+  .page-hero {
+    padding: 7.5rem 1.25rem 2.5rem;
+  }
+
+  /* Section header — less bottom gap */
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Tab switcher — less bottom margin */
+  .contact-tabs-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Contact panels — no forced min-height on mobile */
+  .contact-panel {
+    min-height: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter on small phones */
+  .section {
+    padding: 3.5rem 1rem;
+  }
+
+  .page-hero {
+    padding: 6.5rem 1rem 2rem;
+  }
+
+  /* Tab buttons — shrink font so both labels fit on one line */
+  .contact-tabs-wrapper .tab-btn {
+    font-size: 0.8rem;
+    padding: 0.55rem 1rem;
   }
 }
