@@ -28,16 +28,15 @@ jobs:
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build
 
-      - name: Deploy to Hostinger via SFTP
+      - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          protocol: sftp
           server: ${{ secrets.FTP_HOST }}
-          port: 22
+          port: 21
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /home/${{ secrets.FTP_USERNAME }}/public_html/
+          server-dir: /public_html/
           exclude: |
             **/.git*
             **/.git*/**
