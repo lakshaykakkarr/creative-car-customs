@@ -753,6 +753,43 @@ img {
   line-height: 1.7;
 }
 
+/* ---------- Business Hours (Contact page) ---------- */
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 1rem;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.hours-time {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- Contact Page Tabs ---------- */
+.contact-panel {
+  /* Inherits display:none / display:block from .tab-content / .tab-content.active */
+  min-height: 60vh;
+}
+
+.contact-panel.active {
+  animation: fadeInUp 0.35s ease;
+}
+
 /* ---------- Story Body ---------- */
 #storyBody {
   font-size: 1.05rem;

@@ -45,7 +45,7 @@ async function seedSiteSettings() {
     address: 'Plot 42, Sector 18, Udyog Vihar, Gurgaon, Haryana 122015',
     foundedYear: 2018,
     copyrightYear: 2026,
-    serviceCount: 51,
+    serviceCount: 61,
     socialLinks: {
       instagram: null,
       youtube: null,
@@ -114,7 +114,7 @@ async function seedHomePage() {
     servicesSectionLabel: 'What We Do',
     servicesSectionTitle: 'End-to-End Car Care',
     servicesSectionDesc:
-      'From a simple wash to full custom builds — we handle everything your car needs under one roof.',
+      'From a simple wash to full custom builds — we handle 51+ premium automotive services across detailing, protection, wrapping, performance, tech upgrades, and maintenance. Everything your car needs under one roof.',
     sliderSectionLabel: 'Transformations',
     sliderSectionTitle: 'See the Difference',
     sliderSectionDesc:
@@ -737,6 +737,69 @@ async function seedServices() {
       description: 'Monthly doorstep detailing plan — keep your car pristine all year with scheduled exterior and interior care.',
       startingPrice: 2499,
       priceLabel: '/month',
+    },
+    {
+      _id: 'svc-m-07', _type: 'service', category: 'maintenance', order: 7,
+      title: 'Dent Removal & Paintless Dent Repair (PDR)',
+      slug: { _type: 'slug', current: 'paintless-dent-repair' },
+      description: 'Skillful paintless dent removal technique restoring bodywork without repainting — ideal for minor dents, hail damage, and door dings.',
+      startingPrice: 1999,
+    },
+    {
+      _id: 'svc-m-08', _type: 'service', category: 'maintenance', order: 8,
+      title: 'Glass Repair & Replacement',
+      slug: { _type: 'slug', current: 'glass-repair-replacement' },
+      description: 'Professional windshield and window glass replacement with premium tinted or clear glass, plus UV protection films.',
+      startingPrice: 4999,
+    },
+    {
+      _id: 'svc-m-09', _type: 'service', category: 'maintenance', order: 9,
+      title: 'Fuel Tank & Filter Cleaning',
+      slug: { _type: 'slug', current: 'fuel-tank-filter-cleaning' },
+      description: 'Professional fuel system cleaning and filter replacement to improve engine performance and fuel efficiency.',
+      startingPrice: 3999,
+    },
+    {
+      _id: 'svc-w-09', _type: 'service', category: 'wrapping', order: 9,
+      title: 'Headlight & Taillight Tinting',
+      slug: { _type: 'slug', current: 'headlight-taillight-tinting' },
+      description: 'Precision smoke or custom tint film application to headlights and taillights for a sleek, aggressive look.',
+      startingPrice: 3499,
+    },
+    {
+      _id: 'svc-perf-09', _type: 'service', category: 'performance', order: 9,
+      title: 'Turbo Upgrade & Installation',
+      slug: { _type: 'slug', current: 'turbo-upgrade-installation' },
+      description: 'High-performance turbocharger upgrade and custom installation with fuel and ECU calibration for naturally aspirated engines.',
+      startingPrice: 95000,
+    },
+    {
+      _id: 'svc-p-10', _type: 'service', category: 'protection', order: 10,
+      title: 'Matte Finish Paint Protective Coating',
+      slug: { _type: 'slug', current: 'matte-finish-protective-coating' },
+      description: 'Specialized matte-preserving ceramic coating that protects matte paint without adding gloss — perfect for matte wraps and custom finishes.',
+      startingPrice: 18999,
+    },
+    {
+      _id: 'svc-t-12', _type: 'service', category: 'tech', order: 12,
+      title: 'TPMS (Tire Pressure Monitoring System) Upgrade',
+      slug: { _type: 'slug', current: 'tpms-upgrade' },
+      description: 'Wireless TPMS sensor upgrade with real-time pressure and temperature monitoring via smartphone app integration.',
+      startingPrice: 6999,
+    },
+    {
+      _id: 'svc-d-10', _type: 'service', category: 'detailing', order: 10,
+      title: 'Undercarriage Wash & Anti-Rust Treatment',
+      slug: { _type: 'slug', current: 'undercarriage-wash-anti-rust' },
+      description: 'High-pressure undercarriage wash combined with rust-inhibiting compound application — essential for monsoon and coastal areas.',
+      startingPrice: 2999,
+    },
+    {
+      _id: 'svc-p-11', _type: 'service', category: 'protection', order: 11,
+      title: 'Nano Wax & Sealant Application',
+      slug: { _type: 'slug', current: 'nano-wax-sealant' },
+      description: 'Professional nano-wax or sealant application for 6–12 months of hydrophobic protection between ceramic coatings.',
+      startingPrice: 2499,
     },
   ]
 

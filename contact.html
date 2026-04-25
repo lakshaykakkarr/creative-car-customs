@@ -55,11 +55,32 @@
     <p></p>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact / Feedback Tabbed Section -->
   <section class="section" style="padding-top:2rem;">
     <div class="section-container">
-      <div class="two-col-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-        
+
+      <!-- Tab Switcher -->
+      <div class="gsap-reveal" style="display:flex;justify-content:center;margin-bottom:3rem;">
+        <div class="tabs-nav" id="contactTabsNav" style="max-width:460px;width:100%;">
+          <div class="tab-indicator" id="contactTabIndicator"></div>
+          <button class="tab-btn active" data-tab="quote" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+            Get a Quote
+          </button>
+          <button class="tab-btn" data-tab="feedback" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Leave Feedback
+          </button>
+        </div>
+      </div>
+
+      <!-- Panels -->
+      <div id="contactPanels">
+
+        <!-- Panel: Get a Quote -->
+        <div class="contact-panel tab-content active" data-panel="quote">
+          <div class="two-col-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+
         <!-- Form -->
         <div class="gsap-reveal">
           <h2 style="font-size:1.5rem;margin-bottom:0.5rem;">Send Us a Message</h2>
@@ -248,15 +269,14 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5!2d77.07!3d28.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI5JzI0LjAiTiA3N8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CCC Gurgaon Studio Location"></iframe>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Feedback Section -->
-  <section class="section" style="padding-top:0;">
-    <div class="section-container">
-      <div class="section-header gsap-reveal">
-        <div class="section-label">Your Voice Matters</div>
+          </div><!-- /.two-col-layout -->
+        </div><!-- /.contact-panel[quote] -->
+
+        <!-- Panel: Leave Feedback -->
+        <div class="contact-panel tab-content" data-panel="feedback">
+          <div class="section-header gsap-reveal">
+            <div class="section-label">Your Voice Matters</div>
         <h2 class="section-title">Share Your <span class="text-accent">Experience</span></h2>
         <p class="section-desc">Loved your visit? Tell us about it. Approved reviews appear on our homepage.</p>
       </div>
@@ -394,7 +414,10 @@
           </div>
         </div>
       </div>
-    </div>
+        </div><!-- /.contact-panel[feedback] -->
+
+      </div><!-- /#contactPanels -->
+    </div><!-- /.section-container -->
   </section>
 
   <!-- Footer -->
