@@ -9,7 +9,7 @@ const SETTINGS_QUERY = `{
   "settings": *[_type == "siteSettings"][0]{
     brandName, tagline, footerBlurb, phone, whatsappNumber,
     whatsappMessage, email, address, foundedYear, copyrightYear,
-    socialLinks
+    socialLinks, "logoUrl": logo.asset->url
   },
   "hours": *[_type == "businessHours"] | order(order asc) {
     dayLabel, openTime, closeTime, isByAppointment
@@ -29,6 +29,17 @@ export async function applySettings() {
     if (waBtn && s.whatsappNumber) {
       const msg = encodeURIComponent(s.whatsappMessage || "Hi CCC! I'd like to know more about your services.");
       waBtn.href = `https://wa.me/${s.whatsappNumber.replace(/\D/g, '')}?text=${msg}`;
+    }
+
+    // ---- Nav logo image ----
+    if (s.logoUrl) {
+      document.querySelectorAll('.nav-logo svg').forEach(svg => {
+        const img = document.createElement('img');
+        img.src = s.logoUrl;
+        img.alt = s.brandName || 'Logo';
+        img.style.cssText = 'height:40px;width:auto;display:block;';
+        svg.replaceWith(img);
+      });
     }
 
     // ---- Footer brand blurb ----

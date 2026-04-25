@@ -5,6 +5,13 @@ export default defineType({
   title: 'Site Settings',
   type: 'document',
   fields: [
+    defineField({
+      name: 'logo',
+      title: 'Logo Image',
+      type: 'image',
+      description: 'Upload a logo to replace the default SVG icon in the navbar. Recommended: transparent PNG or SVG, min 80px tall.',
+      options: { hotspot: false },
+    }),
     defineField({ name: 'brandName', title: 'Brand Name', type: 'string' }),
     defineField({ name: 'tagline', title: 'Tagline', type: 'string' }),
     defineField({

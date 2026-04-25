@@ -15,6 +15,12 @@ const AREAS_QUERY = `{
     areasMapEmbedUrl,
     ctaBannerHeading, ctaBannerSubtext, ctaBannerBtnText, ctaBannerBtnUrl,
     areasDooorstepLabel, areasDooorstepTitle, areasDooorstepSteps
+  },
+  "settings": *[_type == "siteSettings"][0]{
+    phone, address, whatsappNumber
+  },
+  "hours": *[_type == "businessHours"] | order(order asc) {
+    dayLabel, openTime, closeTime, isByAppointment
   }
 }`;
 
@@ -27,7 +33,7 @@ const REGION_LABELS = {
 
 export async function renderAreas() {
   try {
-    const { areas, page } = await client.fetch(AREAS_QUERY);
+    const { areas, page, settings: s, hours } = await client.fetch(AREAS_QUERY);
 
     // ---- Meta / Hero ----
     if (page?.metaTitle) document.title = page.metaTitle;
@@ -48,6 +54,26 @@ export async function renderAreas() {
     if (page?.areasMapEmbedUrl) {
       const mapEl = document.getElementById('areasMapEmbed');
       if (mapEl) mapEl.src = page.areasMapEmbedUrl;
+    }
+
+    // ---- HQ contact details ----
+    if (s) {
+      const addrEl = document.getElementById('hqAddress');
+      if (addrEl && s.address) addrEl.textContent = s.address;
+
+      const phoneEl = document.getElementById('hqPhone');
+      if (phoneEl && s.phone) {
+        phoneEl.textContent = s.phone;
+        phoneEl.href = `tel:${s.phone.replace(/\s/g, '')}`;
+      }
+    }
+
+    // ---- HQ working hours (compact single-line summary) ----
+    const hoursEl = document.getElementById('hqHours');
+    if (hoursEl && hours?.length) {
+      hoursEl.textContent = hours
+        .map(h => `${h.dayLabel}: ${h.isByAppointment ? 'By Appointment' : `${h.openTime} – ${h.closeTime}`}`)
+        .join(' | ');
     }
 
     // ---- Areas by region ----

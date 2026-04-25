@@ -124,17 +124,18 @@ export async function renderAbout() {
 
     // ---- Team ----
     const teamEl = document.getElementById('teamGrid');
-    if (teamEl && team?.length) {
-      teamEl.innerHTML = team.map(m => {
-        const initials = esc(m.initials || m.name.split(' ').map(n => n[0]).join(''));
+    const validTeam = (team || []).filter(m => m.name);
+    if (teamEl && validTeam.length) {
+      teamEl.innerHTML = validTeam.map(m => {
+        const initials = esc(m.initials || m.name.split(' ').map(n => n[0]).join('').toUpperCase());
         const avatarHtml = m.photoUrl
-          ? `<img src="${esc(m.photoUrl)}" alt="${esc(m.name)}" style="width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;display:block;">`
-          : `<div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;margin:0 auto 1rem;">${initials}</div>`;
+          ? `<img src="${esc(m.photoUrl)}" alt="${esc(m.name)}" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 1.25rem;display:block;">`
+          : `<div class="team-avatar" style="width:100px;height:100px;border-radius:50%;background:var(--bg-elevated);border:2px solid var(--border-accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;margin:0 auto 1.25rem;">${initials}</div>`;
         return `
         <div class="card gsap-reveal" style="text-align:center;">
           ${avatarHtml}
           <h3 class="card-title">${esc(m.name)}</h3>
-          <p style="color:var(--accent);font-size:0.875rem;font-weight:600;margin-bottom:0.75rem;">${esc(m.role)}</p>
+          <p style="color:var(--accent);font-size:0.875rem;font-weight:600;margin-bottom:0.75rem;">${esc(m.role || '')}</p>
           <p class="card-text">${esc(m.bio || '')}</p>
         </div>`;
       }).join('');
