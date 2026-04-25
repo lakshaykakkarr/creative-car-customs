@@ -14,7 +14,8 @@ const GALLERY_QUERY = `{
     caption, beforeImageUrl, beforeAlt, afterImageUrl, afterAlt
   },
   "page": *[_type == "pageContent" && page == "gallery"][0]{
-    metaTitle, metaDescription, heroHeading, heroHeadingAccent, heroSubtitle
+    metaTitle, metaDescription, heroHeading, heroHeadingAccent, heroSubtitle,
+    ctaBannerHeading, ctaBannerSubtext, ctaBannerBtnText, ctaBannerBtnUrl
   }
 }`;
 
@@ -86,6 +87,20 @@ export async function renderGallery() {
       `).join('');
       revealElements(slidersEl);
       import('../slider.js').then(m => m.initSliders?.());
+    }
+
+    // ---- CTA Banner ----
+    const ctaBanner = document.getElementById('galleryCTABanner');
+    if (ctaBanner && page) {
+      const h2 = ctaBanner.querySelector('h2');
+      const p = ctaBanner.querySelector('p');
+      const btn = ctaBanner.querySelector('.btn');
+      if (h2 && page.ctaBannerHeading) h2.textContent = page.ctaBannerHeading;
+      if (p && page.ctaBannerSubtext) p.textContent = page.ctaBannerSubtext;
+      if (btn) {
+        if (page.ctaBannerBtnText) btn.childNodes[0].textContent = page.ctaBannerBtnText + '\n          ';
+        if (page.ctaBannerBtnUrl) btn.href = page.ctaBannerBtnUrl;
+      }
     }
 
   } catch (err) {

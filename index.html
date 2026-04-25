@@ -90,7 +90,7 @@
   <!-- Services Preview -->
   <section class="section" id="services-preview">
     <div class="section-container">
-      <div class="section-header gsap-reveal">
+      <div id="servicesSectionHeader" class="section-header gsap-reveal">
         <div class="section-label">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           What We Do
@@ -108,7 +108,7 @@
   <!-- Before / After Slider -->
   <section class="section bg-section-alt">
     <div class="section-container">
-      <div class="section-header gsap-reveal">
+      <div id="sliderSectionHeader" class="section-header gsap-reveal">
         <div class="section-label">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12H3M12 3v18"/></svg>
           Transformations
@@ -125,6 +125,11 @@
   <!-- Stats -->
   <section class="section">
     <div class="section-container">
+      <div id="statsSectionHeader" class="section-header gsap-reveal" style="display:none;">
+        <div class="section-label"></div>
+        <h2 class="section-title"></h2>
+        <p class="section-desc"></p>
+      </div>
       <div class="stats-grid gsap-reveal" id="statsGrid">
         <!-- Populated by CMS -->
       </div>
@@ -134,7 +139,7 @@
   <!-- Testimonials -->
   <section class="section bg-section-alt">
     <div class="section-container">
-      <div class="section-header gsap-reveal">
+      <div id="testimonialsSectionHeader" class="section-header gsap-reveal">
         <div class="section-label">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Testimonials

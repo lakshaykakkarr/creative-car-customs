@@ -9,6 +9,7 @@ export default defineType({
     defineField({ name: 'metaTitle', title: 'Meta Title', type: 'string' }),
     defineField({ name: 'metaDescription', title: 'Meta Description', type: 'text', rows: 2 }),
     defineField({ name: 'ogTitle', title: 'OG / Social Share Title', type: 'string' }),
+    defineField({ name: 'ogDescription', title: 'OG / Social Share Description', type: 'text', rows: 2 }),
 
     // Hero
     defineField({ name: 'heroBadge', title: 'Hero Badge Text', type: 'string' }),
@@ -27,7 +28,9 @@ export default defineType({
       type: 'url',
     }),
     defineField({ name: 'heroCta1Text', title: 'CTA Button 1 Text', type: 'string' }),
+    defineField({ name: 'heroCta1Url', title: 'CTA Button 1 URL (e.g. contact.html)', type: 'string' }),
     defineField({ name: 'heroCta2Text', title: 'CTA Button 2 Text', type: 'string' }),
+    defineField({ name: 'heroCta2Url', title: 'CTA Button 2 URL (e.g. services.html)', type: 'string' }),
 
     // Services Section
     defineField({ name: 'servicesSectionLabel', title: 'Services Section Label', type: 'string' }),
@@ -43,6 +46,11 @@ export default defineType({
     defineField({ name: 'sliderSectionLabel', title: 'Slider Section Label', type: 'string' }),
     defineField({ name: 'sliderSectionTitle', title: 'Slider Section Title', type: 'string' }),
     defineField({ name: 'sliderSectionDesc', title: 'Slider Section Description', type: 'text', rows: 2 }),
+
+    // Stats Section
+    defineField({ name: 'statsSectionLabel', title: 'Stats Section Label', type: 'string' }),
+    defineField({ name: 'statsSectionTitle', title: 'Stats Section Title', type: 'string' }),
+    defineField({ name: 'statsSectionDesc', title: 'Stats Section Description', type: 'text', rows: 2 }),
 
     // Testimonials Section
     defineField({

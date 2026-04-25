@@ -54,9 +54,10 @@ export default defineType({
     defineField({ name: 'visionText', title: '[About] Vision Text', type: 'text', rows: 3 }),
 
     // CTA Banner (About / Gallery / Areas)
-    defineField({ name: 'ctaBannerTitle', title: 'CTA Banner Title', type: 'string' }),
-    defineField({ name: 'ctaBannerDesc', title: 'CTA Banner Description', type: 'text', rows: 2 }),
-    defineField({ name: 'ctaBannerButtonText', title: 'CTA Banner Button Text', type: 'string' }),
+    defineField({ name: 'ctaBannerHeading', title: 'CTA Banner Heading', type: 'string' }),
+    defineField({ name: 'ctaBannerSubtext', title: 'CTA Banner Subtext', type: 'text', rows: 2 }),
+    defineField({ name: 'ctaBannerBtnText', title: 'CTA Banner Button Text', type: 'string' }),
+    defineField({ name: 'ctaBannerBtnUrl', title: 'CTA Banner Button URL (e.g. contact.html)', type: 'string' }),
 
     // Services page
     defineField({
@@ -64,6 +65,8 @@ export default defineType({
       title: '[Services] Service Count in Hero',
       type: 'number',
     }),
+    defineField({ name: 'servicesProcessLabel', title: '[Services] Process Section Label', type: 'string' }),
+    defineField({ name: 'servicesProcessTitle', title: '[Services] Process Section Title', type: 'string' }),
     defineField({
       name: 'servicesFaqTitle',
       title: '[Services] FAQ Section Title',
@@ -90,6 +93,22 @@ export default defineType({
       name: 'areasMapEmbedUrl',
       title: '[Areas] Google Maps Embed URL',
       type: 'url',
+    }),
+    defineField({ name: 'areasDooorstepLabel', title: '[Areas] Doorstep Section Label', type: 'string' }),
+    defineField({ name: 'areasDooorstepTitle', title: '[Areas] Doorstep Section Title', type: 'string' }),
+    defineField({
+      name: 'areasDooorstepSteps',
+      title: '[Areas] How Doorstep Works Steps',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'title', title: 'Step Title', type: 'string' },
+            { name: 'description', title: 'Step Description', type: 'string' },
+          ],
+        },
+      ],
     }),
 
     // Contact page

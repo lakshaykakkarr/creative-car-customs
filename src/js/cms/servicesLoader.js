@@ -21,6 +21,8 @@ const SERVICES_QUERY = `{
   },
   "page": *[_type == "pageContent" && page == "services"][0]{
     metaTitle, metaDescription, heroHeading, heroHeadingAccent, heroSubtitle,
+    servicesProcessLabel, servicesProcessTitle,
+    servicesFaqTitle,
     servicesProcessSteps
   }
 }`;
@@ -59,6 +61,40 @@ export async function renderServices() {
         </div>
       `).join('');
       revealElements(pkgGrid);
+    }
+
+    // ---- Process section heading ----
+    const processSectionHeader = document.getElementById('processSectionHeader');
+    if (processSectionHeader && page) {
+      if (page.servicesProcessLabel) {
+        const labelEl = processSectionHeader.querySelector('.section-label');
+        if (labelEl) labelEl.textContent = page.servicesProcessLabel;
+      }
+      if (page.servicesProcessTitle) {
+        const titleEl = processSectionHeader.querySelector('.section-title');
+        if (titleEl) titleEl.textContent = page.servicesProcessTitle;
+      }
+    }
+
+    // ---- Process steps (CMS-driven if provided) ----
+    const processStepsEl = document.getElementById('processSteps');
+    if (processStepsEl && page?.servicesProcessSteps?.length) {
+      processStepsEl.innerHTML = page.servicesProcessSteps.map(s => `
+        <div class="process-step">
+          <div class="step-number">${esc(String(s.step))}</div>
+          <div>
+            <div class="step-title">${esc(s.title)}</div>
+            <div class="step-desc">${esc(s.description || '')}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ---- FAQ section heading ----
+    const faqSectionHeader = document.getElementById('faqSectionHeader');
+    if (faqSectionHeader && page?.servicesFaqTitle) {
+      const titleEl = faqSectionHeader.querySelector('.section-title');
+      if (titleEl) titleEl.textContent = page.servicesFaqTitle;
     }
 
     // ---- FAQ ----

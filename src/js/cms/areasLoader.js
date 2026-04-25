@@ -12,7 +12,9 @@ const AREAS_QUERY = `{
   },
   "page": *[_type == "pageContent" && page == "areas"][0]{
     metaTitle, metaDescription, heroHeading, heroHeadingAccent, heroSubtitle,
-    areasMapEmbedUrl
+    areasMapEmbedUrl,
+    ctaBannerHeading, ctaBannerSubtext, ctaBannerBtnText, ctaBannerBtnUrl,
+    areasDooorstepLabel, areasDooorstepTitle, areasDooorstepSteps
   }
 }`;
 
@@ -69,6 +71,50 @@ export async function renderAreas() {
           </div>
         `).join('');
       revealElements(areasEl);
+    }
+
+    // ---- Doorstep section heading ----
+    const doorstepHeader = document.getElementById('doorstepSectionHeader');
+    if (doorstepHeader && page) {
+      if (page.areasDooorstepLabel) {
+        const labelEl = doorstepHeader.querySelector('.section-label');
+        if (labelEl) {
+          // Preserve leading SVG icon, update only the text node
+          const textNode = [...labelEl.childNodes].find(n => n.nodeType === Node.TEXT_NODE);
+          if (textNode) textNode.textContent = ' ' + page.areasDooorstepLabel;
+        }
+      }
+      if (page.areasDooorstepTitle) {
+        const titleEl = doorstepHeader.querySelector('.section-title');
+        if (titleEl) titleEl.textContent = page.areasDooorstepTitle;
+      }
+    }
+
+    // ---- Doorstep steps (CMS-driven if provided) ----
+    const doorstepStepsEl = document.getElementById('doorstepSteps');
+    if (doorstepStepsEl && page?.areasDooorstepSteps?.length) {
+      doorstepStepsEl.innerHTML = page.areasDooorstepSteps.map((s, i) => `
+        <div class="card gsap-reveal" style="text-align:center;position:relative;">
+          <div style="position:absolute;top:1.5rem;right:1.5rem;width:36px;height:36px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;">${i + 1}</div>
+          <h3 class="card-title">${esc(s.title)}</h3>
+          <p class="card-text">${esc(s.description || '')}</p>
+        </div>
+      `).join('');
+      revealElements(doorstepStepsEl);
+    }
+
+    // ---- CTA Banner ----
+    const ctaBanner = document.getElementById('areasCTABanner');
+    if (ctaBanner && page) {
+      const h2 = ctaBanner.querySelector('h2');
+      const p = ctaBanner.querySelector('p');
+      const btn = ctaBanner.querySelector('.btn');
+      if (h2 && page.ctaBannerHeading) h2.textContent = page.ctaBannerHeading;
+      if (p && page.ctaBannerSubtext) p.textContent = page.ctaBannerSubtext;
+      if (btn) {
+        if (page.ctaBannerBtnText) btn.childNodes[0].textContent = page.ctaBannerBtnText + '\n          ';
+        if (page.ctaBannerBtnUrl) btn.href = page.ctaBannerBtnUrl;
+      }
     }
 
   } catch (err) {

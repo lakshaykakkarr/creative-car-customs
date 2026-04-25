@@ -19,10 +19,14 @@ const CATEGORY_ICONS = {
 
 const HOME_QUERY = `{
   "page": *[_type == "homePage"][0]{
-    metaTitle, metaDescription, heroBadge, heroTitle, heroTitleAccent,
+    metaTitle, metaDescription, ogTitle, ogDescription,
+    heroBadge, heroTitle, heroTitleAccent,
     heroSubtitle, heroImageUrl, heroCta1Text, heroCta1Url,
     heroCta2Text, heroCta2Url,
-    servicesSectionLabel, servicesSectionTitle, servicesSectionDesc
+    servicesSectionLabel, servicesSectionTitle, servicesSectionDesc,
+    sliderSectionLabel, sliderSectionTitle, sliderSectionDesc,
+    statsSectionLabel, statsSectionTitle, statsSectionDesc,
+    testimonialsSectionLabel, testimonialsSectionTitle, testimonialsSectionDesc
   },
   "categories": *[_type == "serviceCategory"] | order(order asc) {
     title, slug, tabLabel, cardDescription, icon, _id
@@ -51,9 +55,19 @@ export async function renderHome() {
       const m = document.querySelector('meta[name="description"]');
       if (m) m.setAttribute('content', page.metaDescription);
     }
+    if (page?.ogDescription) {
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', page.ogDescription);
+    }
 
     // ---- Hero ----
     _renderHero(page);
+
+    // ---- Section headings (services, slider, stats, testimonials) ----
+    _setSectionHeader('servicesSectionHeader', page?.servicesSectionLabel, page?.servicesSectionTitle, page?.servicesSectionDesc);
+    _setSectionHeader('sliderSectionHeader', page?.sliderSectionLabel, page?.sliderSectionTitle, page?.sliderSectionDesc);
+    _setSectionHeader('statsSectionHeader', page?.statsSectionLabel, page?.statsSectionTitle, page?.statsSectionDesc);
+    _setSectionHeader('testimonialsSectionHeader', page?.testimonialsSectionLabel, page?.testimonialsSectionTitle, page?.testimonialsSectionDesc);
 
     // ---- Service categories grid ----
     const catGrid = document.getElementById('serviceCategoriesGrid');
@@ -165,4 +179,37 @@ function _renderHero(page) {
     const heroBg = document.querySelector('.hero-bg');
     if (heroBg) heroBg.style.backgroundImage = `url('${page.heroImageUrl}')`;
   }
+}
+
+/**
+ * Update a section header block (label text, h2 title, p desc) by the header element's ID.
+ * Preserves any SVG icons inside .section-label by replacing only the trailing text node.
+ * Shows the header element if it was hidden (used for the stats header which starts hidden).
+ */
+function _setSectionHeader(headerId, label, title, desc) {
+  const header = document.getElementById(headerId);
+  if (!header) return;
+  let updated = false;
+
+  if (label) {
+    const labelEl = header.querySelector('.section-label');
+    if (labelEl) {
+      // Replace trailing text node, preserving any leading SVG
+      const textNode = Array.from(labelEl.childNodes).find(n => n.nodeType === 3);
+      if (textNode) { textNode.textContent = ' ' + label; }
+      else { labelEl.insertAdjacentText('beforeend', ' ' + label); }
+      updated = true;
+    }
+  }
+  if (title) {
+    const titleEl = header.querySelector('.section-title');
+    if (titleEl) { titleEl.textContent = title; updated = true; }
+  }
+  if (desc) {
+    const descEl = header.querySelector('.section-desc');
+    if (descEl) { descEl.textContent = desc; updated = true; }
+  }
+
+  // Show a previously hidden header once CMS data is available
+  if (updated && header.style.display === 'none') header.style.display = '';
 }

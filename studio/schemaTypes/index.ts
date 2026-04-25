@@ -12,6 +12,7 @@ import faqItem from './faqItem'
 import serviceArea from './serviceArea'
 import homePage from './homePage'
 import pageContent from './pageContent'
+import whyChooseUs from './whyChooseUs'
 
 export const schemaTypes = [
   siteSettings,
@@ -28,4 +29,5 @@ export const schemaTypes = [
   serviceArea,
   homePage,
   pageContent,
+  whyChooseUs,
 ]
