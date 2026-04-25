@@ -108,7 +108,9 @@ async function seedHomePage() {
       'Premium car detailing, protection, customization & performance upgrades — delivered to your doorstep, anywhere in India.',
     heroImageUrl: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80',
     heroCta1Text: 'Book Now',
+    heroCta1Url: 'contact.html',
     heroCta2Text: 'Explore Services',
+    heroCta2Url: 'services.html',
     servicesSectionLabel: 'What We Do',
     servicesSectionTitle: 'End-to-End Car Care',
     servicesSectionDesc:
@@ -121,6 +123,11 @@ async function seedHomePage() {
     testimonialsSectionTitle: 'What Our Clients Say',
     testimonialsSectionDesc:
       'Join thousands of satisfied car owners who trust CCC with their prized possessions.',
+    statsSectionLabel: 'By the Numbers',
+    statsSectionTitle: 'Our Track Record',
+    statsSectionDesc: 'Real numbers. Real trust. Built over years of premium service.',
+    ogDescription:
+      'Premium car detailing, ceramic coating, PPF, wrapping & performance upgrades. Doorstep service across India. HQ Delhi NCR.',
   })
 }
 
@@ -147,10 +154,11 @@ async function seedPageContent() {
         'To deliver world-class car care experiences that are accessible, convenient, and uncompromising in quality — right at your doorstep, anywhere in India.',
       visionText:
         "To become India's #1 end-to-end car customization and care platform — setting the standard for quality, innovation, and customer experience in the automotive aftermarket.",
-      ctaBannerTitle: 'Ready to Experience the CCC Difference?',
-      ctaBannerDesc:
+      ctaBannerHeading: 'Ready to Experience the CCC Difference?',
+      ctaBannerSubtext:
         'Book a consultation and let us show you what true car care looks like.',
-      ctaBannerButtonText: 'Get a Free Quote',
+      ctaBannerBtnText: 'Get a Free Quote',
+      ctaBannerBtnUrl: 'contact.html',
     },
     {
       _id: 'page-services',
@@ -184,10 +192,11 @@ async function seedPageContent() {
       heroHeadingAccent: 'Gallery',
       heroSubtitle:
         'Real work. Real results. Browse our portfolio of stunning car transformations.',
-      ctaBannerTitle: 'Want Your Car Featured Here?',
-      ctaBannerDesc:
+      ctaBannerHeading: 'Want Your Car Featured Here?',
+      ctaBannerSubtext:
         'Book your transformation today and join our growing gallery of happy car owners.',
-      ctaBannerButtonText: 'Book Your Transformation',
+      ctaBannerBtnText: 'Book Your Transformation',
+      ctaBannerBtnUrl: 'contact.html',
     },
     {
       _id: 'page-areas',
@@ -199,10 +208,11 @@ async function seedPageContent() {
       heroHeading: 'We Serve',
       heroHeadingAccent: 'All of India',
       heroSubtitle: '50+ cities. One promise — premium car care delivered to your doorstep.',
-      ctaBannerTitle: 'Your City, Your Driveway, Our Service',
-      ctaBannerDesc:
+      ctaBannerHeading: 'Your City, Your Driveway, Our Service',
+      ctaBannerSubtext:
         "Don't see your city? Get in touch — we're expanding every month.",
-      ctaBannerButtonText: 'Book Doorstep Service',
+      ctaBannerBtnText: 'Book Doorstep Service',
+      ctaBannerBtnUrl: 'contact.html',
     },
     {
       _id: 'page-contact',
@@ -1074,6 +1084,62 @@ async function seedServiceAreas() {
   await upsertMany(areas.map((a) => ({ ...a, _type: 'serviceArea' })))
 }
 
+// ─── 15. Why Choose Us ────────────────────────────────────────────────────────
+
+async function seedWhyChooseUs() {
+  console.log('[why] Why Choose Us')
+  await upsertMany([
+    {
+      _id: 'why-01',
+      _type: 'whyChooseUs',
+      icon: 'award',
+      title: 'Certified Experts',
+      description: 'Our technicians are certified and trained in the latest detailing and coating techniques.',
+      order: 1,
+    },
+    {
+      _id: 'why-02',
+      _type: 'whyChooseUs',
+      icon: 'map-pin',
+      title: 'Doorstep Service',
+      description: 'We come to you — home, office, or anywhere across 50+ cities in India.',
+      order: 2,
+    },
+    {
+      _id: 'why-03',
+      _type: 'whyChooseUs',
+      icon: 'shield',
+      title: 'Premium Products',
+      description: 'We use only globally trusted brands — XPEL, 3M, Gtechniq, and more.',
+      order: 3,
+    },
+    {
+      _id: 'why-04',
+      _type: 'whyChooseUs',
+      icon: 'clock',
+      title: 'On-Time Delivery',
+      description: 'We respect your schedule. Confirmed slots, no delays, no surprises.',
+      order: 4,
+    },
+    {
+      _id: 'why-05',
+      _type: 'whyChooseUs',
+      icon: 'star',
+      title: '5,000+ Happy Clients',
+      description: 'A track record built on referrals, reviews, and repeat customers.',
+      order: 5,
+    },
+    {
+      _id: 'why-06',
+      _type: 'whyChooseUs',
+      icon: 'check-circle',
+      title: 'Satisfaction Guarantee',
+      description: "We don't leave until you're 100% satisfied with the work done.",
+      order: 6,
+    },
+  ])
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -1093,6 +1159,7 @@ async function main() {
     await seedStats()
     await seedFaqs()
     await seedServiceAreas()
+    await seedWhyChooseUs()
     console.log('\n[done] Seed complete! All documents created/updated in Sanity.')
   } catch (err) {
     console.error('\n[ERROR] Seed failed:', err)
