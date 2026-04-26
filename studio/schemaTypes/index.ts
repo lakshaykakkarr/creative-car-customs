@@ -13,6 +13,8 @@ import serviceArea from './serviceArea'
 import homePage from './homePage'
 import pageContent from './pageContent'
 import whyChooseUs from './whyChooseUs'
+import featuredBuild from './featuredBuild'
+import supportedBrand from './supportedBrand'
 
 export const schemaTypes = [
   siteSettings,
@@ -30,4 +32,6 @@ export const schemaTypes = [
   homePage,
   pageContent,
   whyChooseUs,
+  featuredBuild,
+  supportedBrand,
 ]

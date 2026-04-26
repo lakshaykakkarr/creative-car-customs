@@ -10,21 +10,15 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/assets/logo-D3MxaZLu.svg">
-  <script type="module" crossorigin src="/assets/style-Dxj6Ubvz.js"></script>
-  <script type="module" crossorigin src="/assets/main-DgplrHAK.js"></script>
-  <script type="module" crossorigin src="/assets/slider-BRTYJkPD.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/style-BhtvDwEh.css">
+  <script type="module" crossorigin src="/assets/index-BlETPnGJ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/style-BfvnSg7i.js">
+  <link rel="modulepreload" crossorigin href="/assets/main-BHvhgc8U.js">
+  <link rel="modulepreload" crossorigin href="/assets/slider-BRTYJkPD.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-CHsd0AxG.css">
 </head>
 <body class="grain">
-
-  <!-- Glass Ambient Background -->
-  <div class="glass-ambient">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
 
   <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -33,8 +27,9 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-        <span>Creative<span class="logo-accent">Car</span>Customs</span>
+        <svg width="120" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <rect width="120" height="28" rx="3" fill="currentColor" opacity="0.03"/>
+        </svg>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
@@ -45,10 +40,6 @@
         <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
       </ul>
       <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
           <span></span><span></span><span></span>
         </button>
@@ -58,7 +49,9 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/3045163/3045163-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge" id="heroBadge"></div>
@@ -80,6 +73,32 @@
       <div style="width:1px;height:30px;background:linear-gradient(to bottom,var(--text-muted),transparent);"></div>
     </div>
   </section>
+
+  <!-- Brand Marquee -->
+  <div class="brand-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="marquee-brand">3M</span></div>
+      <div class="marquee-item"><span class="marquee-brand">XPEL</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Llumar</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Ceramic Pro</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Avery Dennison</span></div>
+      <div class="marquee-item"><span class="marquee-brand">SunTek</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Gyeon</span></div>
+      <div class="marquee-item"><span class="marquee-brand">System X</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Meguiar's</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Koch-Chemie</span></div>
+      <div class="marquee-item"><span class="marquee-brand">3M</span></div>
+      <div class="marquee-item"><span class="marquee-brand">XPEL</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Llumar</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Ceramic Pro</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Avery Dennison</span></div>
+      <div class="marquee-item"><span class="marquee-brand">SunTek</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Gyeon</span></div>
+      <div class="marquee-item"><span class="marquee-brand">System X</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Meguiar's</span></div>
+      <div class="marquee-item"><span class="marquee-brand">Koch-Chemie</span></div>
+    </div>
+  </div>
 
   <!-- Services Preview -->
   <section class="section" id="services-preview">
@@ -109,6 +128,54 @@
       </div>
       <div id="homeSliders">
         <!-- Populated by CMS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Builds -->
+  <section class="builds-section section">
+    <div class="section-container">
+      <div class="section-header gsap-reveal">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Signature Builds</h2>
+        <p class="section-desc">Every car tells a story. These are ours.</p>
+      </div>
+      <div class="builds-scroll" id="buildsScroll">
+        <div class="build-card">
+          <div class="build-card-img" style="background:var(--bg-card);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:var(--font-label);font-size:1.5rem;letter-spacing:0.1em;">BMW M4</div>
+          <div class="build-card-body">
+            <span class="build-label">Full PPF + Ceramic</span>
+            <h3 class="build-title">BMW M4 Competition</h3>
+            <p class="build-spec">XPEL Ultimate Plus · Gyeon Quartz · Satin finish</p>
+          </div>
+        </div>
+        <div class="build-card">
+          <div class="build-card-img" style="background:var(--bg-card);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:var(--font-label);font-size:1.5rem;letter-spacing:0.1em;">AMG GT</div>
+          <div class="build-card-body">
+            <span class="build-label">Chrome Delete + Wrap</span>
+            <h3 class="build-title">Mercedes AMG GT</h3>
+            <p class="build-spec">Avery Dennison · Matte Gunmetal · Custom trims</p>
+          </div>
+        </div>
+        <div class="build-card">
+          <div class="build-card-img" style="background:var(--bg-card);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:var(--font-label);font-size:1.5rem;letter-spacing:0.1em;">911 GTS</div>
+          <div class="build-card-body">
+            <span class="build-label">Paint Correction</span>
+            <h3 class="build-title">Porsche 911 GTS</h3>
+            <p class="build-spec">3-stage correction · Ceramic Pro TOP · 9H hardness</p>
+          </div>
+        </div>
+        <div class="build-card">
+          <div class="build-card-img" style="background:var(--bg-card);min-height:300px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-family:var(--font-label);font-size:1.5rem;letter-spacing:0.1em;">RR Sport</div>
+          <div class="build-card-body">
+            <span class="build-label">Full Custom Wrap</span>
+            <h3 class="build-title">Range Rover Sport</h3>
+            <p class="build-spec">3M 1080 series · Satin Black · Chrome accents</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="gallery.html" class="btn btn-outline">View All Work</a>
       </div>
     </div>
   </section>
@@ -143,6 +210,130 @@
     </div>
   </section>
 
+  <!-- Find Your Build -->
+  <section class="configurator-section">
+    <div class="section-container">
+      <div class="section-header gsap-reveal">
+        <div class="section-label">Personalized</div>
+        <h2 class="section-title">Find Your Build</h2>
+        <p class="section-desc">Three questions. One perfect recommendation.</p>
+      </div>
+      <div class="config-layout gsap-reveal" id="configurator">
+
+        <!-- Questions column -->
+        <div class="config-questions">
+
+          <!-- Step 1 -->
+          <div class="config-step" data-step="1">
+            <div class="config-step-header">
+              <span class="step-num">01</span>
+              <span class="step-label">Vehicle Type</span>
+              <span class="step-value" id="stepVal1"></span>
+            </div>
+            <div class="config-options">
+              <button class="config-option" data-step="1" data-value="hatchback" data-label="Hatchback">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Hatchback</span>
+              </button>
+              <button class="config-option" data-step="1" data-value="sedan" data-label="Sedan">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Sedan</span>
+              </button>
+              <button class="config-option" data-step="1" data-value="suv" data-label="SUV / MUV">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">SUV / MUV</span>
+              </button>
+              <button class="config-option" data-step="1" data-value="luxury" data-label="Luxury">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Luxury / Sports</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="config-step" data-step="2">
+            <div class="config-step-header">
+              <span class="step-num">02</span>
+              <span class="step-label">Primary Goal</span>
+              <span class="step-value" id="stepVal2"></span>
+            </div>
+            <div class="config-options">
+              <button class="config-option" data-step="2" data-value="protection" data-label="Protection">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Paint Protection</span>
+              </button>
+              <button class="config-option" data-step="2" data-value="appearance" data-label="Appearance">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Shine &amp; Finish</span>
+              </button>
+              <button class="config-option" data-step="2" data-value="customization" data-label="Custom Wrap">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Style &amp; Wrap</span>
+              </button>
+              <button class="config-option" data-step="2" data-value="performance" data-label="Performance">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Performance</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="config-step" data-step="3">
+            <div class="config-step-header">
+              <span class="step-num">03</span>
+              <span class="step-label">Budget Range</span>
+              <span class="step-value" id="stepVal3"></span>
+            </div>
+            <div class="config-options">
+              <button class="config-option" data-step="3" data-value="budget" data-label="Under &#x20B9;10K">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">Under &#x20B9;10,000</span>
+              </button>
+              <button class="config-option" data-step="3" data-value="mid" data-label="&#x20B9;10K&ndash;&#x20B9;50K">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">&#x20B9;10K &ndash; &#x20B9;50K</span>
+              </button>
+              <button class="config-option" data-step="3" data-value="premium" data-label="&#x20B9;50K&ndash;&#x20B9;1.5L">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">&#x20B9;50K &ndash; &#x20B9;1.5L</span>
+              </button>
+              <button class="config-option" data-step="3" data-value="ultra" data-label="&#x20B9;1.5L+">
+                <span class="config-opt-icon"></span>
+                <span class="config-opt-label">&#x20B9;1.5L+</span>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /config-questions -->
+
+        <!-- Result sidebar -->
+        <div class="config-sidebar">
+          <div class="config-result" id="configResult">
+            <div class="config-result-idle">
+              <div class="config-result-idle-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <p class="config-result-idle-text">Select your vehicle &amp; goal<br>to see your recommendation</p>
+            </div>
+            <div class="config-result-content">
+              <div class="config-result-tag">Recommended for you</div>
+              <h3 class="config-result-title" id="configResultTitle"></h3>
+              <p class="config-result-desc" id="configResultDesc"></p>
+              <div class="config-result-actions">
+                <a href="contact.html" class="btn btn-primary" style="justify-content:center;">
+                  Get a Quote
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <button class="btn btn-outline" id="configReset" style="justify-content:center;">Start Over</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /config-layout -->
+    </div>
+  </section>
+
   <!-- CTA Banner -->
   <section class="section">
     <div class="section-container">
@@ -162,8 +353,9 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem;">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36"></svg>
-          <span>Creative<span class="logo-accent">Car</span>Customs</span>
+          <span class="logo-ccc">CCC</span>
+          <span class="logo-sep">—</span>
+          <span class="logo-full">Creative Car Customs</span>
         </a>
         <p></p>
         <div class="footer-social">

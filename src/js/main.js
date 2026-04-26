@@ -31,20 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Feedback form (contact page) ----
   if (document.getElementById('feedbackForm')) initFeedbackForm();
 
-  // ---- Theme Toggle ----
-  const htmlEl = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('ccc-theme') || 'dark';
-  htmlEl.setAttribute('data-theme', savedTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const next = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', next);
-      localStorage.setItem('ccc-theme', next);
-    });
-  }
-
   // ---- Navbar scroll effect ----
   const navbar = document.getElementById('navbar');
   function handleScroll() {
@@ -128,21 +114,6 @@ function initAnimations() {
       { opacity: 0, y: 18 },
       { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 }
     );
-  }
-
-  // --- Hero parallax (native CSS transform, no GSAP scrub overhead) ---
-  const heroBg = document.querySelector('.hero-bg');
-  if (heroBg) {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
   }
 
   // --- Batch reveal: card grids (staggered cascade) ---
