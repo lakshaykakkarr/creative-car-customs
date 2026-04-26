@@ -10,6 +10,7 @@
 import { initFeedbackForm } from './feedback-form.js';
 
 const TABS = ['quote', 'feedback'];
+const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/send-contact.php';
 
 // ---- Indicator -------------------------------------------------------
 function moveIndicator(activeBtn, indicator) {
@@ -79,9 +80,14 @@ function initContactForm() {
   const dateInput = form.querySelector('#date');
   if (dateInput) dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Honeypot: bots commonly fill hidden fields.
+    if (form.querySelector('[name="website"]')?.value) return;
+
     form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
+    _clearContactSubmitError(form);
 
     let valid = true;
     const name    = form.querySelector('#name');
@@ -105,10 +111,74 @@ function initContactForm() {
       return;
     }
 
-    form.style.display = 'none';
-    successEl?.classList.add('active');
-    // Production: replace with Formspree / Netlify / custom fetch
-    console.log('Form submitted:', Object.fromEntries(new FormData(form)));
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalHTML = submitBtn?.innerHTML || '';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+
+    const payload = {
+      name: name.value.trim(),
+      phone: phone.value.trim(),
+      email: email?.value.trim() || '',
+      city: city.value.trim(),
+      service: service.value,
+      car: form.querySelector('#car')?.value.trim() || '',
+      date: form.querySelector('#date')?.value || '',
+      budget: form.querySelector('#budget')?.value || '',
+      message: form.querySelector('#message')?.value.trim() || '',
+      website: form.querySelector('[name="website"]')?.value || '',
+    };
+
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const contentType = res.headers.get('content-type') || '';
+      const rawBody = await res.text();
+      const json = contentType.includes('application/json')
+        ? JSON.parse(rawBody || '{}')
+        : null;
+
+      const success = res.ok && (
+        json?.ok === true
+        || json?.success === true
+        || (json?.status && String(json.status).toLowerCase() === 'ok')
+      );
+
+      if (!success) {
+        if (res.ok && !json) {
+          throw new Error(
+            `Endpoint returned HTTP 200 but not JSON from ${CONTACT_API_URL}. Verify VITE_CONTACT_API_URL points to a live PHP endpoint.`
+          );
+        }
+
+        throw new Error(json?.error || json?.message || `Request failed (${res.status})`);
+      }
+
+      form.style.display = 'none';
+      successEl?.classList.add('active');
+    } catch (err) {
+      console.error('[Contact] Submit error:', err);
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHTML;
+      }
+
+      _showContactSubmitError(
+        form,
+        'Could not send your inquiry right now. Please try again or reach us via WhatsApp/email.'
+      );
+    }
   });
 
   form.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(input => {
@@ -116,6 +186,22 @@ function initContactForm() {
       input.addEventListener(ev, () => input.closest('.form-group')?.classList.remove('error'))
     );
   });
+}
+
+function _showContactSubmitError(form, message) {
+  let errEl = form.querySelector('.contact-submit-error');
+  if (!errEl) {
+    errEl = document.createElement('p');
+    errEl.className = 'contact-submit-error';
+    errEl.style.cssText = 'color:var(--accent);font-size:0.875rem;margin-top:0.75rem;text-align:center;';
+    form.querySelector('[type="submit"]')?.insertAdjacentElement('afterend', errEl);
+  }
+  errEl.textContent = message;
+}
+
+function _clearContactSubmitError(form) {
+  const errEl = form.querySelector('.contact-submit-error');
+  if (errEl) errEl.textContent = '';
 }
 
 // ---- Boot ------------------------------------------------------------

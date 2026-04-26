@@ -17,3 +17,5 @@ yarn-error.log*
 .parcel-cache/
 .history/
 Thumbs.db
+api/config.php
+api/vendor/

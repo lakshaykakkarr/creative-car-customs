@@ -20,5 +20,12 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    proxy: {
+      // Local dev: forward PHP API calls to a PHP built-in server.
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+      },
+    },
   },
 });

@@ -1,0 +1,9 @@
+{
+  "name": "creative-car-customs/contact-mailer",
+  "description": "Hostinger SMTP contact endpoint for Creative Car Customs",
+  "type": "project",
+  "require": {
+    "php": ">=8.0",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}

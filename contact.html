@@ -87,6 +87,7 @@
           <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:2rem;">Fill out the form and we'll get back to you within 2 hours during business hours.</p>
           
           <form id="contactForm" class="form-grid" novalidate>
+            <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
             <div class="form-group">
               <label class="form-label" for="name">Full Name *</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
@@ -282,11 +283,9 @@
       </div>
       <div style="max-width:720px;margin:0 auto;">
         <div class="gsap-reveal">
-          <!-- NOTE: Replace YOUR_FORM_ID with your Formspree endpoint ID after creating the form at formspree.io -->
-          <form id="feedbackForm" action="https://formspree.io/f/mkokeokv" method="POST" novalidate>
+          <form id="feedbackForm" novalidate>
             <!-- Honeypot anti-spam: bots fill this, humans don't -->
             <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="New Customer Feedback — Creative Car Customs">
             <div class="form-grid">
               <div class="form-group">
                 <label class="form-label" for="fb-name">Full Name *</label>

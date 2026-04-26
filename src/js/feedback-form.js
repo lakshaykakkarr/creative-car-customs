@@ -1,9 +1,9 @@
 /* ============================================
-   feedback-form.js — Customer feedback form:
-   star rating, validation, Formspree submit.
+  feedback-form.js — Customer feedback form:
+  star rating, validation, API submit.
 
    Architecture (no browser→Sanity on submit):
-   1. Validate + submit to Formspree
+  1. Validate + submit to server-side API
    2. Admin email contains Approve / Discard URLs
       with all review data encoded in params
    3. approve.html reads params, writes to Sanity
@@ -11,6 +11,7 @@
    ============================================ */
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || window.location.origin;
+const FEEDBACK_API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/send-contact.php';
 
 export function initFeedbackForm() {
   const form      = document.getElementById('feedbackForm');
@@ -131,30 +132,53 @@ export function initFeedbackForm() {
     const discardUrl = `${SITE_URL}/approve.html?action=discard&${reviewParams}`;
 
     try {
-      const fd = new FormData();
-      fd.append('_subject', `[CCC Feedback] New ${selectedRating}-star review from ${name.value.trim()}`);
-      fd.append('Reviewer Name',    name.value.trim());
-      fd.append('City',             city.value.trim());
-      fd.append('Rating',           `${selectedRating}/5  ${starStr}`);
-      fd.append('Service Received', service.value);
-      fd.append('Car',              carLabel);
-      fd.append('Review',           comment.value.trim());
-      if (email?.value.trim()) fd.append('Customer Email', email.value.trim());
-      if (phone?.value.trim()) fd.append('Customer Phone', phone.value.trim());
-      fd.append('--- APPROVE',  approveUrl);
-      fd.append('--- DISCARD',  discardUrl);
+      const payload = {
+        formType: 'feedback',
+        name: name.value.trim(),
+        city: city.value.trim(),
+        service: service.value,
+        rating: selectedRating,
+        comment: comment.value.trim(),
+        carMake,
+        carModel,
+        car: carLabel,
+        email: email?.value.trim() || '',
+        phone: phone?.value.trim() || '',
+        approveUrl,
+        discardUrl,
+        website: form.querySelector('[name="_gotcha"]')?.value || '',
+      };
 
-      const endpoint = form.action || 'https://formspree.io/f/mkokeokv';
-      const res = await fetch(endpoint, {
-        method:  'POST',
-        headers: { Accept: 'application/json' },
-        body:    fd,
+      const res = await fetch(FEEDBACK_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
-      const json = await res.json().catch(() => null);
-      console.log('[Feedback] Formspree response', res.status, json);
+      const contentType = res.headers.get('content-type') || '';
+      const rawBody = await res.text();
+      const json = contentType.includes('application/json')
+        ? JSON.parse(rawBody || '{}')
+        : null;
 
-      if (!res.ok) throw new Error(`Formspree ${res.status}: ${json?.error || JSON.stringify(json)}`);
+      const success = res.ok && (
+        json?.ok === true
+        || json?.success === true
+        || (json?.status && String(json.status).toLowerCase() === 'ok')
+      );
+
+      if (!success) {
+        if (res.ok && !json) {
+          throw new Error(
+            `Endpoint returned HTTP 200 but not JSON from ${FEEDBACK_API_URL}.`
+          );
+        }
+
+        throw new Error(json?.error || json?.message || `Request failed (${res.status})`);
+      }
 
       form.style.display = 'none';
       successEl?.classList.add('active');

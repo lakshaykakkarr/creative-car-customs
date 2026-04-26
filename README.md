@@ -16,7 +16,7 @@ A fully static, premium website for **Creative Car Customs** — a car detailing
 | **Typography** | Inter (Google Fonts) | Weights 400–900, tight tracking |
 | **JavaScript** | Vanilla JS (ES6+) | No framework, 5 modular JS files |
 | **Icons** | Inline SVGs | No icon library dependency |
-| **Backend** | None | Fully static, no server-side code |
+| **Backend** | PHP + PHPMailer (optional deployment) | Contact form submits to server-side SMTP endpoint on Hostinger |
 
 ### CDN Dependencies (loaded in `<head>` or before `</body>`)
 
@@ -39,6 +39,10 @@ creative-car-customs/
 ├── gallery.html            # Gallery page (filterable grid, before/after sliders, lightbox)
 ├── areas.html              # Service areas (Delhi NCR HQ, 4 regional cards, doorstep info)
 ├── contact.html            # Contact page (form, info cards, map embed)
+├── api/
+│   ├── send-contact.php    # Hostinger SMTP endpoint (server-side only)
+│   ├── config.php.example  # SMTP config template (copy to config.php on server)
+│   └── composer.json       # PHPMailer dependency
 ├── css/
 │   └── style.css           # Complete design system (~2000 lines)
 ├── js/
@@ -103,6 +107,7 @@ creative-car-customs/
 ### `contact.html` — Contact
 - Contact form (name, email, phone, service dropdown, date, message)
 - Client-side validation with error states and success message
+- Sends to server-side `/api/send-contact.php` endpoint (no SMTP credentials in browser)
 - Minimum date enforcement (today's date)
 - Info cards (phone, email, address)
 - Embedded map placeholder
@@ -220,13 +225,13 @@ All buttons use `border-radius: 50px` (pill shape) with:
 - Lightbox: opens on click, close on X button, overlay click, or Escape key
 - Navigation between images in lightbox
 
-### `js/form.js` — Contact Form Validation
+### `js/form.js` — Contact Form Validation + Submit
 - Client-side validation for all fields (name, email, phone, service, date, message)
 - Visual error states with messages
 - Phone: Indian format validation
 - Date: Enforces minimum date (today)
-- Success message on valid submission
-- No backend — form data is not sent anywhere (needs integration)
+- Async submit to `/api/send-contact.php` (or `VITE_CONTACT_API_URL`)
+- Success/error state handling for backend responses
 
 ---
 
@@ -302,7 +307,16 @@ npx serve -l 3000
 http://localhost:3000
 ```
 
-No build step, no `npm install`, no dependencies to install. Everything loads from CDN.
+Run `npm install` if you want to use Vite (`npm run dev`, `npm run build`).
+
+For the PHP contact API:
+
+```bash
+cd api
+composer install --no-dev --optimize-autoloader
+```
+
+Then copy `api/config.php.example` to `api/config.php` on server and set mailbox credentials there or via server environment variables.
 
 ---
 
@@ -331,6 +345,18 @@ No build step, no `npm install`, no dependencies to install. Everything loads fr
 - Self-host Google Fonts and GSAP for better performance (fewer DNS lookups).
 - Add `<link rel="preload">` for critical assets.
 
+### Hostinger SMTP Contact Setup
+
+1. Create mailbox in Hostinger, e.g. `support@creativecarcustoms.com`.
+2. Set SMTP config server-side only:
+  - Host: `smtp.hostinger.com`
+  - Port: `465` with SSL (preferred) or `587` with STARTTLS
+  - Username: full mailbox address
+  - Password: mailbox password
+3. Deploy `api/send-contact.php` and `api/vendor/` to your server.
+4. Keep `api/config.php` private and never expose credentials in frontend code.
+5. Receiving mail is handled in Hostinger Webmail/email app; website only sends outbound form email.
+
 ---
 
 ## TODO / Future Enhancements
@@ -338,7 +364,7 @@ No build step, no `npm install`, no dependencies to install. Everything loads fr
 - [ ] Replace placeholder WhatsApp number (`919999999999`) with real number
 - [ ] Replace Unsplash URLs with self-hosted optimized images
 - [ ] Replace placeholder logo SVG with actual brand logo
-- [ ] Integrate contact form with backend (Netlify Forms, Formspree, or Web3Forms)
+- [x] Integrate contact form with backend (Hostinger SMTP via server-side PHP)
 - [ ] Integrate WhatsApp AI agent (BotPress, AiSensy, or Interakt)
 - [ ] Add Google Analytics / Plausible analytics
 - [ ] Add structured data (JSON-LD) for local business SEO

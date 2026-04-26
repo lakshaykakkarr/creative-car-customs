@@ -1,0 +1,17 @@
+<?php
+
+// Copy this file to config.php and fill values for your Hostinger mailbox.
+// Keep config.php out of version control.
+return [
+  'SMTP_HOST' => 'smtp.hostinger.com',
+  'SMTP_PORT' => '465',
+  'SMTP_USERNAME' => 'support@creativecarcustoms.com',
+  'SMTP_PASSWORD' => 'replace-with-mailbox-password',
+  'MAIL_FROM' => 'support@creativecarcustoms.com',
+  'MAIL_TO' => 'support@creativecarcustoms.com',
+  // Optional: comma-separated origins. Leave blank to allow same-origin only.
+  'ALLOWED_ORIGINS' => 'https://creativecarcustoms.com,https://www.creativecarcustoms.com',
+  // Optional per-IP limits.
+  'RATE_LIMIT_WINDOW_SECONDS' => '600',
+  'RATE_LIMIT_MAX_REQUESTS' => '6',
+];
